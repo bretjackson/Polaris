@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         float verticalRot = Input.GetAxis("Mouse Y");
 
         transform.Rotate(0, horizontalRot*mouseSensitivity, 0);
-        cameraTransform.Rotate(verticalRot*mouseSensitivity, 0, 0);
+        cameraTransform.Rotate(-verticalRot*mouseSensitivity, 0, 0);
 
         Vector3 currentRotation = cameraTransform.localEulerAngles;
         if (currentRotation.x > 180){

@@ -6,10 +6,10 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueUIText;
-    public Canvas dialogueCanvas;
     public GameObject continueButton;
-    public GameObject optionPanel;
-    public TextMeshProUGUI[] optionsUI;
+    public Canvas dialogueCanvas;
+    // public GameObject optionPanel;
+    // public TextMeshProUGUI[] optionsUI;
 
     private DialogueTree dialogue;
     private Sentence currentSentence = null;
@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void AdvanceSentence(){
+        print("advance");
         currentSentence = currentSentence.nextSentence;
         DisplaySentence();
     }
@@ -31,7 +32,7 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-        HideOptions();
+        // HideOptions();
         string sentence = currentSentence.text;
         //dialogueUIText.text = sentence;
         StopAllCoroutines();
@@ -45,40 +46,41 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
 
-        if (currentSentence.HasOptions()){
-            DisplayOptions();
-        }
-        else{
-            continueButton.SetActive(true);
-        }
+        continueButton.SetActive(true);
+        // if (currentSentence.HasOptions()){
+        //     DisplayOptions();
+        // }
+        // else{
+        //     continueButton.SetActive(true);
+        // }
     }
 
-    void DisplayOptions(){
-        if (currentSentence.options.Count <= optionsUI.Length){
-            for (int i=0; i < currentSentence.options.Count; i++){
-                optionsUI[i].text = currentSentence.options[i].text;
-                optionsUI[i].transform.parent.gameObject.SetActive(true);
-            }
-        }
-        optionPanel.SetActive(true);
-    }
+    // void DisplayOptions(){
+    //     if (currentSentence.options.Count <= optionsUI.Length){
+    //         for (int i=0; i < currentSentence.options.Count; i++){
+    //             optionsUI[i].text = currentSentence.options[i].text;
+    //             optionsUI[i].transform.parent.gameObject.SetActive(true);
+    //         }
+    //     }
+    //     optionPanel.SetActive(true);
+    // }
 
-    void HideOptions(){
-        continueButton.SetActive(false);
-        foreach(TextMeshProUGUI option in optionsUI){
-            option.transform.parent.gameObject.SetActive(false);
-        }
-        optionPanel.SetActive(false);
-    }
+    // void HideOptions(){
+    //     continueButton.SetActive(false);
+    //     foreach(TextMeshProUGUI option in optionsUI){
+    //         option.transform.parent.gameObject.SetActive(false);
+    //     }
+    //     optionPanel.SetActive(false);
+    // }
 
-    public void OptionOnClick(int index){
-        Choice option = currentSentence.options[index];
-        if (option.onOptionSelected != null){
-            option.onOptionSelected.Raise();
-        }
-        currentSentence = option.nextSentence;
-        DisplaySentence();
-    }
+    // public void OptionOnClick(int index){
+    //     Choice option = currentSentence.options[index];
+    //     if (option.onOptionSelected != null){
+    //         option.onOptionSelected.Raise();
+    //     }
+    //     currentSentence = option.nextSentence;
+    //     DisplaySentence();
+    // }
 
     void EndDialogue(){
         dialogueCanvas.enabled = false;
