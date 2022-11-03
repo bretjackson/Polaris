@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public float upLimit = -50;
     public float downLimit = 50;
 
+    public float characterHeight = 4.11f;
+
     // Update is called once per frame
     void Update()
     {
@@ -29,7 +31,23 @@ public class PlayerController : MonoBehaviour
         float horizontalMove = Input.GetAxis("Horizontal");
         float verticalMove = Input.GetAxis("Vertical");
 
-        Vector3 movement = transform.forward*verticalMove + transform.right*horizontalMove;
+        float gravity = 0f;
+
+        // if the character is not grounded, use raycasting to bring them to ground 
+        
+        // Bit shift the index of the layer (8) to get a bit mask
+        int layerMask = 1 << 8;
+
+        // This would cast rays only against colliders in layer 8.
+        // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
+        layerMask = ~layerMask;
+        RaycastHit hit;
+        if (!characterController.isGrounded
+            & Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask)) {
+            gravity = hit.distance - characterHeight;
+        }
+
+        Vector3 movement = transform.forward*verticalMove + transform.right*horizontalMove + new Vector3(0, gravity, 0);
         characterController.Move(movement*speed*Time.deltaTime);
     }
 
