@@ -15,7 +15,9 @@ public class ItemPickup : MonoBehaviour
         Destroy(gameObject);
 
         // trigger dialogue
-        dialogueManager.StartDialogue(dialogue);
+        if (dialogueManager != null) {
+            dialogueManager.StartDialogue(dialogue);
+        }
     }
 
     private void OnMouseDown()
