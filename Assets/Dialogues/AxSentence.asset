@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
+  m_Name: AxSentence
+  m_EditorClassIdentifier: 
+  text: We used one of these at camp to chop firewood. Maybe I could use this for
+    something later.
+  nextSentence: {fileID: 0}
+  options: []
