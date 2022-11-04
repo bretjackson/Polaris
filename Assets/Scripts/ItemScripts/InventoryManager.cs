@@ -11,10 +11,26 @@ public class InventoryManager : MonoBehaviour
 
     public Transform ItemContent;
     public GameObject InventoryItem;
+    public GameObject Inventory;
+    public GameObject InventoryButton;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    void Update() {
+        if (Input.GetKeyDown("tab")) {
+            if (Inventory.activeInHierarchy == false) {
+                Inventory.SetActive(true);
+                InventoryButton.SetActive(false);
+                ListItems();
+            }
+            else {
+                Inventory.SetActive(false);
+                InventoryButton.SetActive(true);
+            }
+        }
     }
 
     public void Add(Item item)

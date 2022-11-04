@@ -16,7 +16,7 @@ public class Flashlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("f")){
+        if (Input.GetKeyDown("f")){
             myLight.enabled = !myLight.enabled;
         }
     }

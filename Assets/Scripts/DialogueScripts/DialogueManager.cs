@@ -14,6 +14,12 @@ public class DialogueManager : MonoBehaviour
     private DialogueTree dialogue;
     private Sentence currentSentence = null;
 
+    void Update() {
+        if (dialogueCanvas.enabled == true & Input.GetKeyDown("space")) {
+            AdvanceSentence();
+        }
+    }
+
     public void StartDialogue(DialogueTree dialogueTree){
         dialogue = dialogueTree;
         currentSentence = dialogue.startingSentence;
@@ -22,7 +28,6 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void AdvanceSentence(){
-        print("advance");
         currentSentence = currentSentence.nextSentence;
         DisplaySentence();
     }
