@@ -6,18 +6,28 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueUIText;
-    public GameObject continueButton;
+    //public GameObject continueButton;
     public Canvas dialogueCanvas;
     // public GameObject optionPanel;
     // public TextMeshProUGUI[] optionsUI;
+    public TextMeshProUGUI instructionsUIText;
 
     private DialogueTree dialogue;
     private Sentence currentSentence = null;
+    private bool firstDialogue = true;
+    private string currentInstruction = null;
 
     void Update() {
         if (dialogueCanvas.enabled == true & Input.GetKeyDown("space")) {
             AdvanceSentence();
         }
+    }
+
+    public void DisplayInstructions(string command){
+        firstDialogue = false;
+        currentInstruction = command;
+        dialogueCanvas.enabled = true;
+        instructionsUIText.text = currentInstruction;
     }
 
     public void StartDialogue(DialogueTree dialogueTree){
@@ -28,8 +38,14 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void AdvanceSentence(){
-        currentSentence = currentSentence.nextSentence;
-        DisplaySentence();
+        if (dialogueUIText.text == currentSentence.text){
+            currentSentence = currentSentence.nextSentence;
+            DisplaySentence();
+        }
+        else {
+            StopAllCoroutines();
+            dialogueUIText.text = currentSentence.text;
+        }
     }
 
     public void DisplaySentence(){
@@ -42,6 +58,9 @@ public class DialogueManager : MonoBehaviour
         //dialogueUIText.text = sentence;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+        if (firstDialogue) {
+            DisplayInstructions("Press Space to continue.");
+        }
     }
 
     IEnumerator TypeSentence(string sentence){
@@ -51,7 +70,7 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
 
-        continueButton.SetActive(true);
+        //continueButton.SetActive(true);
         // if (currentSentence.HasOptions()){
         //     DisplayOptions();
         // }
@@ -89,5 +108,6 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue(){
         dialogueCanvas.enabled = false;
+        instructionsUIText.text = null;
     }
 }
