@@ -20,6 +20,12 @@ public class PlayerController : MonoBehaviour
 
     public float characterHeight = 4.11f;
 
+    public Animator animator;
+
+    // void Start(){
+    //     animator = GetComponent<animator>();
+    // }
+
     // Update is called once per frame
     void Update()
     {
@@ -49,6 +55,12 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = transform.forward*verticalMove + transform.right*horizontalMove + new Vector3(0, gravity, 0);
         characterController.Move(movement*speed*Time.deltaTime);
+        if (movement.sqrMagnitude > 1E-3f){ // I think this means she walks with roatation
+            animator.SetBool("isWalking", true); //possible to refactor in so only have to get isWalking once
+        }
+        else{
+            animator.SetBool("isWalking", false);
+        }
     }
 
     void Rotate(){

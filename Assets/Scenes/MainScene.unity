@@ -1391,6 +1391,7 @@ MonoBehaviour:
   upLimit: -50
   downLimit: 50
   characterHeight: 4.11
+  animator: {fileID: 729592018}
 --- !u!1 &768936031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,6 +1483,7 @@ MonoBehaviour:
   upLimit: -50
   downLimit: 50
   characterHeight: 4.11
+  animator: {fileID: 0}
 --- !u!54 &865866754
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2631,8 +2633,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueUIText: {fileID: 1318503344}
-  continueButton: {fileID: 1223871520}
   dialogueCanvas: {fileID: 1847941616}
+  instructionsUIText: {fileID: 0}
 --- !u!114 &1847941614
 MonoBehaviour:
   m_ObjectHideFlags: 0
