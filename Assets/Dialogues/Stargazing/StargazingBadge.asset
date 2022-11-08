@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: AxSentence
+  m_Name: StargazingBadge
   m_EditorClassIdentifier: 
-  text: We used one of these at camp to chop firewood. Maybe I could use this for
-    something later.
+  text: text
   nextSentence: {fileID: 0}
   options: []
