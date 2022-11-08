@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
   m_Name: NotScaryPrints2
   m_EditorClassIdentifier: 
-  text: text
+  text: "These are rabbit tracks. Rabbits are prey animals and \u2018prey animal\u2019
+    means not scary."
   nextSentence: {fileID: 0}
   options: []
