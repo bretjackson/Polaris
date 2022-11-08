@@ -55,12 +55,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = transform.forward*verticalMove + transform.right*horizontalMove + new Vector3(0, gravity, 0);
         characterController.Move(movement*speed*Time.deltaTime);
-        if (movement.sqrMagnitude > 1E-3f){ // I think this means she walks with roatation
-            animator.SetBool("isWalking", true); //possible to refactor in so only have to get isWalking once
-        }
-        else{
-            animator.SetBool("isWalking", false);
-        }
+        UpdateAnimation();
     }
 
     void Rotate(){
@@ -76,5 +71,15 @@ public class PlayerController : MonoBehaviour
         }
         currentRotation.x  = Mathf.Clamp(currentRotation.x, upLimit, downLimit);
         cameraTransform.localRotation = Quaternion.Euler(currentRotation);
+    }
+
+    void UpdateAnimation(){
+        //https://docs.unity3d.com/ScriptReference/CharacterController-velocity.html
+        if (characterController.velocity.sqrMagnitude > 1E-3f){
+            animator.SetBool("isWalking", true); //possible to refactor in so only have to get isWalking once
+        }
+        else{
+            animator.SetBool("isWalking", false);
+        }
     }
 }

@@ -232,6 +232,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3521487}
   m_CullTransparentMesh: 1
+--- !u!4 &37133772 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3321919801592875672, guid: debf96f1c362241508d648282b57e387, type: 3}
+  m_PrefabInstance: {fileID: 530232864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &74264335
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,6 +980,7 @@ GameObject:
   - component: {fileID: 478174685}
   - component: {fileID: 478174684}
   - component: {fileID: 478174683}
+  - component: {fileID: 478174686}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1041,13 +1047,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478174682}
   m_LocalRotation: {x: -0.0010983271, y: 0.017673729, z: -0.024366971, w: 0.9995463}
-  m_LocalPosition: {x: 0.0032653809, y: 1.1707416, z: -0.0043029785}
+  m_LocalPosition: {x: 150.00327, y: 6.2707415, z: 150.0307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 729592019}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+--- !u!114 &478174686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478174682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008be5049da474506b1147e745250d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 37133772}
 --- !u!1001 &530232864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1105,10 +1124,7 @@ PrefabInstance:
       value: Girl
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: debf96f1c362241508d648282b57e387, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 478174685}
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: debf96f1c362241508d648282b57e387, type: 3}
 --- !u!1001 &635156675
 PrefabInstance:
@@ -1320,11 +1336,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!4 &729592019 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: debf96f1c362241508d648282b57e387, type: 3}
-  m_PrefabInstance: {fileID: 530232864}
-  m_PrefabAsset: {fileID: 0}
 --- !u!143 &729592020
 CharacterController:
   m_ObjectHideFlags: 0
