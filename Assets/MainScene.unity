@@ -1273,7 +1273,6 @@ MonoBehaviour:
   InventoryItem: {fileID: 3893060395419658933, guid: 7830f92c739f24b8ba002cd73a375ad3, type: 3}
   Inventory: {fileID: 3521487}
   InventoryButton: {fileID: 265696599}
-  dialogueManager: {fileID: 1847941613}
 --- !u!4 &768936033
 Transform:
   m_ObjectHideFlags: 0
@@ -1336,6 +1335,7 @@ MonoBehaviour:
   upLimit: -50
   downLimit: 50
   characterHeight: 4.11
+  animator: {fileID: 0}
 --- !u!54 &865866754
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2674,7 +2674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Instructional Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
