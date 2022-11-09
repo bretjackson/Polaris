@@ -17,6 +17,6 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         cameraLocation.position = head.position;
-        cameraLocation.rotation = head.rotation;
+        // cameraLocation.rotation = head.rotation;
     }
 }
