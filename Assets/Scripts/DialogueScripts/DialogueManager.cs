@@ -17,14 +17,24 @@ public class DialogueManager : MonoBehaviour
     private bool firstDialogue = true;
     private string currentInstruction = null;
 
+    void Start() {
+        dialogueUIText.text = null;
+        DisplayInstructions("Press F to turn on flashlight.");
+    }
+
     void Update() {
         if (dialogueCanvas.enabled == true & Input.GetKeyDown("space")) {
             AdvanceSentence();
         }
+        if (instructionsUIText.text == "Press F to turn on flashlight." & Input.GetKeyDown("f")) {
+            EndDialogue();
+        }
     }
 
     public void DisplayInstructions(string command){
-        firstDialogue = false;
+        if (command == "Press Space to continue.") {
+            firstDialogue = false;
+        }
         currentInstruction = command;
         dialogueCanvas.enabled = true;
         instructionsUIText.text = currentInstruction;
