@@ -21,10 +21,12 @@ public class PlayerController : MonoBehaviour
     public float characterHeight = 4.11f;
 
     public Animator animator;
-
-    // void Start(){
-    //     animator = GetComponent<animator>();
-    // }
+    
+    void Start(){
+        // animator = GetComponent<animator>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
+    }
 
     // Update is called once per frame
     void Update()
