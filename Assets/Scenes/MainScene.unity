@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0009996623, g: 0.0010221412, b: 0.0009996623, a: 1}
+  m_IndirectSpecularColor: {r: 0.0009963397, g: 0.0010251341, b: 0.0009963397, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1069,7 +1069,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 10}
+  m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &320683728
 MonoBehaviour:
@@ -2349,7 +2349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2197c8285b896414b8d177642f15ec45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
+  items:
+  - {fileID: 11400000, guid: afd520d210a0146e9b87bda9a202d76c, type: 2}
+  - {fileID: 11400000, guid: 0b40233e0f9964c2fb1aef8b251d24b9, type: 2}
   ItemContent: {fileID: 320683727}
   InventoryItem: {fileID: 3893060395419658933, guid: 7830f92c739f24b8ba002cd73a375ad3, type: 3}
   Inventory: {fileID: 3521487}
