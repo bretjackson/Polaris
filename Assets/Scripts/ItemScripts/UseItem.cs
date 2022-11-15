@@ -1,17 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class UseItem : MonoBehaviour
 {
     public string itemName;
     // public GameEvent event; // the animation or change to scene that results from using this item
-    
+    private PlayableDirector director;
+
     public DialogueManager dialogueManager;
     public InventoryManager invManager;
     
     private bool itemUsed = false;
     private bool instructionsPresent = false;
+
+    void Awake() 
+    {
+        director = GetComponent<PlayableDirector>();
+        
+        director.Pause();
+    }
 
     // Update is called once per frame
     void Update()
@@ -45,5 +54,6 @@ public class UseItem : MonoBehaviour
     {
         // trigger the event for that item
         print("Using item: " + itemName);
+        director.Play();
     }
 }
