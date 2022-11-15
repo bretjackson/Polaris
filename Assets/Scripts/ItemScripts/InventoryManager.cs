@@ -61,4 +61,13 @@ public class InventoryManager : MonoBehaviour
             itemName.text = item.itemName;
         }
     }
+
+    public bool Contains(Item item){
+        foreach(Item i in items) {
+            if (i == item) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
