@@ -62,9 +62,12 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public bool Contains(Item item){
+    // item ids:
+    // 1 = ax, 2 = screwdriver, 3 = star badge, 4 = detective badge, 
+    // 5 = fauna badge, 6 = water, 7 = flashlight
+    public bool Contains(int itemId){
         foreach(Item i in items) {
-            if (i == item) {
+            if (i.id == itemId) {
                 return true;
             }
         }

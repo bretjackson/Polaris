@@ -116,8 +116,9 @@ public class DialogueManager : MonoBehaviour
     //     DisplaySentence();
     // }
 
-    void EndDialogue(){
+    public void EndDialogue(){
         dialogueCanvas.enabled = false;
         instructionsUIText.text = null;
+        dialogueUIText.text = null;
     }
 }
