@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 public class UseItem : MonoBehaviour
 {
     public string itemName;
-    // public GameEvent event; // the animation or change to scene that results from using this item
+    public int itemId;
     private PlayableDirector director;
 
     public DialogueManager dialogueManager;
@@ -18,8 +18,6 @@ public class UseItem : MonoBehaviour
     void Awake() 
     {
         director = GetComponent<PlayableDirector>();
-        
-        director.Pause();
     }
 
     // Update is called once per frame
@@ -36,8 +34,7 @@ public class UseItem : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        // probably also trigger dialogue here eventually
-        if (!itemUsed & invManager.Contains(2)) // screwdriver = id 2
+        if (!itemUsed & invManager.Contains(itemId))
         {
             dialogueManager.DisplayInstructions("Press E to use " + itemName.ToLower() + ".");
             instructionsPresent = true;
@@ -53,7 +50,6 @@ public class UseItem : MonoBehaviour
     void Use()
     {
         // trigger the event for that item
-        print("Using item: " + itemName);
         director.Play();
     }
 }
