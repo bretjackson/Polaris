@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0009996623, g: 0.0010221412, b: 0.0009996623, a: 1}
+  m_IndirectSpecularColor: {r: 0.0009963397, g: 0.0010251341, b: 0.0009963397, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3865,7 +3865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Screwdriver
-  itemId: 2
+  itemId: 2,4
   dialogueManager: {fileID: 1847941613}
   invManager: {fileID: 768936032}
 --- !u!320 &1965322542
