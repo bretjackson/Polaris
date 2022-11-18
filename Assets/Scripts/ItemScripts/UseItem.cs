@@ -83,7 +83,10 @@ public class UseItem : MonoBehaviour
 
     void Use()
     {   
-        gameObject.GetComponent<Animator>().enabled = true;
+        Animator animator = gameObject.GetComponent<Animator>();
+        if (animator != null) {
+            animator.enabled = true;
+        }
         // trigger the event for that item
         director.Play();
     }

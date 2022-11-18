@@ -80,46 +80,11 @@ public class DialogueManager : MonoBehaviour
             dialogueUIText.text += letter;
             yield return new WaitForSeconds(0.05f);
         }
-
-        //continueButton.SetActive(true);
-        // if (currentSentence.HasOptions()){
-        //     DisplayOptions();
-        // }
-        // else{
-        //     continueButton.SetActive(true);
-        // }
     }
-
-    // void DisplayOptions(){
-    //     if (currentSentence.options.Count <= optionsUI.Length){
-    //         for (int i=0; i < currentSentence.options.Count; i++){
-    //             optionsUI[i].text = currentSentence.options[i].text;
-    //             optionsUI[i].transform.parent.gameObject.SetActive(true);
-    //         }
-    //     }
-    //     optionPanel.SetActive(true);
-    // }
-
-    // void HideOptions(){
-    //     continueButton.SetActive(false);
-    //     foreach(TextMeshProUGUI option in optionsUI){
-    //         option.transform.parent.gameObject.SetActive(false);
-    //     }
-    //     optionPanel.SetActive(false);
-    // }
-
-    // public void OptionOnClick(int index){
-    //     Choice option = currentSentence.options[index];
-    //     if (option.onOptionSelected != null){
-    //         option.onOptionSelected.Raise();
-    //     }
-    //     currentSentence = option.nextSentence;
-    //     DisplaySentence();
-    // }
 
     public void EndDialogue(){
         dialogueCanvas.enabled = false;
         instructionsUIText.text = null;
-        dialogueUIText.text = null;
+        //dialogueUIText.text = null;
     }
 }
