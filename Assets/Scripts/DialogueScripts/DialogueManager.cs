@@ -55,6 +55,7 @@ public class DialogueManager : MonoBehaviour
         else {
             StopAllCoroutines();
             dialogueUIText.text = currentSentence.text;
+            currentSentence = null;
         }
     }
 

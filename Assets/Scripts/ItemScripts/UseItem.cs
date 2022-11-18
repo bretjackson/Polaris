@@ -8,6 +8,7 @@ public class UseItem : MonoBehaviour
 {
     public string itemName;
     public string itemId;
+    public string actionDescription;
     private PlayableDirector director;
 
     public DialogueManager dialogueManager;
@@ -68,7 +69,9 @@ public class UseItem : MonoBehaviour
 
         if (!itemUsed & invManContainsAll)
         {
-            dialogueManager.DisplayInstructions("Press E to use " + itemName.ToLower() + ".");
+            // to avoid bug... might need to change this later to just make sure it just only displays new text
+            dialogueManager.dialogueUIText.text = null;
+            dialogueManager.DisplayInstructions("Press E to use " + itemName.ToLower() + " to " + actionDescription.ToLower() + ".");
             instructionsPresent = true;
         }
     }
