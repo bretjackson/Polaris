@@ -23,7 +23,7 @@ public class UseItem : MonoBehaviour
 
     void Awake() 
     {
-        director = GetComponent<PlayableDirector>();
+        director = gameObject.GetComponent<PlayableDirector>();
         // change itemId string to list or int
         if (itemId.Contains(",")) {
             multipleIds = true;
@@ -54,7 +54,6 @@ public class UseItem : MonoBehaviour
         // check if inventory manager contains all ids listed
         bool invManContainsAll = false;
         if (!multipleIds) { // id used, not ids
-            print("one id");
             if (invManager.Contains(id)) {
                 invManContainsAll = true;
             }
@@ -83,7 +82,8 @@ public class UseItem : MonoBehaviour
     }
 
     void Use()
-    {
+    {   
+        gameObject.GetComponent<Animator>().enabled = true;
         // trigger the event for that item
         director.Play();
     }
