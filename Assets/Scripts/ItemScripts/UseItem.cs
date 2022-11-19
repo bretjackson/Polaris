@@ -11,7 +11,8 @@ public class UseItem : MonoBehaviour
     public string actionDescription;
     private PlayableDirector director;
 
-    public DialogueManager dialogueManager;
+    // public DialogueManager dialogueManager;
+    public InstructionManager instructionManager;
     public InventoryManager invManager;
     
     private bool itemUsed = false;
@@ -44,7 +45,7 @@ public class UseItem : MonoBehaviour
         {
             itemUsed = true;
             Use();
-            dialogueManager.EndDialogue();
+            // dialogueManager.EndDialogue();
             instructionsPresent = false;
         }
     }
@@ -69,15 +70,17 @@ public class UseItem : MonoBehaviour
         if (!itemUsed & invManContainsAll)
         {
             // to avoid bug... might need to change this later to just make sure it just only displays new text
-            dialogueManager.dialogueUIText.text = null;
-            dialogueManager.DisplayInstructions("Press E to use " + itemName.ToLower() + " to " + actionDescription.ToLower() + ".");
+            // dialogueManager.dialogueUIText.text = null;
+            
+            // dialogueManager.DisplayInstructions("Press E to use " + itemName.ToLower() + " to " + actionDescription.ToLower() + ".");
+            instructionManager.StartInstructions("Press E to use " + itemName.ToLower() + " to " + actionDescription.ToLower() + ".", "e");
             instructionsPresent = true;
         }
     }
 
     void OnTriggerExit()
     {
-        dialogueManager.EndDialogue();
+        instructionManager.EndInstructions();
         instructionsPresent = false;
     }
 

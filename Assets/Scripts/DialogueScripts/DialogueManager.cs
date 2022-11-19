@@ -6,38 +6,27 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueUIText;
-    //public GameObject continueButton;
     public Canvas dialogueCanvas;
-    // public GameObject optionPanel;
-    // public TextMeshProUGUI[] optionsUI;
-    public TextMeshProUGUI instructionsUIText;
+    // public TextMeshProUGUI instructionsUIText;
+    public InstructionManager instructionManager;
 
     private DialogueTree dialogue;
     private Sentence currentSentence = null;
     private bool firstDialogue = true;
-    private string currentInstruction = null;
+    // private string currentInstruction = null;
 
     void Start() {
-        dialogueUIText.text = null;
-        DisplayInstructions("Press F to turn on flashlight.");
+        // dialogueUIText.text = null;
+        instructionManager.StartInstructions("Press F to turn on flashlight.", "f");
     }
 
     void Update() {
         if (dialogueCanvas.enabled == true & Input.GetKeyDown("space")) {
             AdvanceSentence();
         }
-        if (instructionsUIText.text == "Press F to turn on flashlight." & Input.GetKeyDown("f")) {
-            EndDialogue();
-        }
-    }
-
-    public void DisplayInstructions(string command){
-        if (command == "Press Space to continue.") {
-            firstDialogue = false;
-        }
-        currentInstruction = command;
-        dialogueCanvas.enabled = true;
-        instructionsUIText.text = currentInstruction;
+        // if (instructionsUIText.text == "Press F to turn on flashlight." & Input.GetKeyDown("f")) {
+        //     EndDialogue();
+        // }
     }
 
     public void StartDialogue(DialogueTree dialogueTree){
@@ -55,7 +44,7 @@ public class DialogueManager : MonoBehaviour
         else {
             StopAllCoroutines();
             dialogueUIText.text = currentSentence.text;
-            currentSentence = null;
+            // currentSentence = null;
         }
     }
 
@@ -70,7 +59,7 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
         if (firstDialogue) {
-            DisplayInstructions("Press Space to continue.");
+            instructionManager.StartInstructions("Press Space to continue.", "space");
         }
     }
 
@@ -84,7 +73,8 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue(){
         dialogueCanvas.enabled = false;
-        instructionsUIText.text = null;
-        //dialogueUIText.text = null;
+        currentSentence = null;
+        // instructionsUIText.text = null;
+        // dialogueUIText.text = null;
     }
 }
