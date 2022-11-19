@@ -49,5 +49,6 @@ public class InstructionManager : MonoBehaviour
         instructionalCanvas.enabled = false;
         currentInstruction = null;
         currentInstructionKey = null;
+        instructionsUIText.text = null;
     }
 }

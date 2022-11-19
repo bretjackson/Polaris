@@ -75,6 +75,6 @@ public class DialogueManager : MonoBehaviour
         dialogueCanvas.enabled = false;
         currentSentence = null;
         // instructionsUIText.text = null;
-        // dialogueUIText.text = null;
+        dialogueUIText.text = null;
     }
 }
