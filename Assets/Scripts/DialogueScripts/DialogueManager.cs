@@ -7,13 +7,12 @@ public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueUIText;
     public Canvas dialogueCanvas;
-    // public TextMeshProUGUI instructionsUIText;
+
     public InstructionManager instructionManager;
 
     private DialogueTree dialogue;
     private Sentence currentSentence = null;
     private bool firstDialogue = true;
-    // private string currentInstruction = null;
 
     void Start() {
         // dialogueUIText.text = null;
@@ -24,9 +23,6 @@ public class DialogueManager : MonoBehaviour
         if (dialogueCanvas.enabled == true & Input.GetKeyDown("space")) {
             AdvanceSentence();
         }
-        // if (instructionsUIText.text == "Press F to turn on flashlight." & Input.GetKeyDown("f")) {
-        //     EndDialogue();
-        // }
     }
 
     public void StartDialogue(DialogueTree dialogueTree){
@@ -53,7 +49,6 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-        // HideOptions();
         string sentence = currentSentence.text;
         //dialogueUIText.text = sentence;
         StopAllCoroutines();
@@ -74,7 +69,6 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue(){
         dialogueCanvas.enabled = false;
         currentSentence = null;
-        // instructionsUIText.text = null;
         dialogueUIText.text = null;
     }
 }
