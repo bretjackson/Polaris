@@ -43,9 +43,9 @@ public class DialogueManager : MonoBehaviour
         //else {
             //bool isEqual = conditionals.OrderBy(x => x).SequenceEqual(currentSentence.getIds().OrderBy(x => x));
             if(IsEqual(conditionals, currentSentence.getIds())) {
-                Debug.Log(String.Format("StartIsEqual"));
-                Debug.Log(String.Format("Con: " + conditionals[0] + conditionals[1]));
-                Debug.Log(String.Format("Sen: " + currentSentence.getIds()[0] + currentSentence.getIds()[1]));
+                // Debug.Log(String.Format("StartIsEqual"));
+                // Debug.Log(String.Format("Con: " + conditionals[0] + conditionals[1]));
+                // Debug.Log(String.Format("Sen: " + currentSentence.getIds()[0] + currentSentence.getIds()[1]));
                 dialogueCanvas.enabled = true;
                 DisplaySentence();
             }
@@ -67,12 +67,16 @@ public class DialogueManager : MonoBehaviour
                     Debug.Log(String.Format("AdvanceIsEqual"));
                     currentSentence = nextSentence;
                     DisplaySentence();
+                    //currentSentence = null;
                 }
                 else {
+                    // Debug.Log(String.Format("Con: " + conditionals[0] + conditionals[1]));
+                    // Debug.Log(String.Format("Sen: " + currentSentence.getIds()[0] + currentSentence.getIds()[1]));
+                    if(nextSentence == null) {
+                        EndDialogue();
+                    }
+                    //AdvanceSentence();
                     Debug.Log(String.Format("Advance"));
-                    Debug.Log(String.Format("Con: " + conditionals[0] + conditionals[1]));
-                    Debug.Log(String.Format("Sen: " + currentSentence.getIds()[0] + currentSentence.getIds()[1]));
-                    AdvanceSentence();
                 }
             //}
         }
