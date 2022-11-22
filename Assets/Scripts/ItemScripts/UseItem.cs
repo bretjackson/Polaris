@@ -69,10 +69,6 @@ public class UseItem : MonoBehaviour
 
         if (!itemUsed & invManContainsAll)
         {
-            // to avoid bug... might need to change this later to just make sure it just only displays new text
-            // dialogueManager.dialogueUIText.text = null;
-            
-            // dialogueManager.DisplayInstructions("Press E to use " + itemName.ToLower() + " to " + actionDescription.ToLower() + ".");
             instructionManager.StartInstructions("Press E to use " + itemName.ToLower() + " to " + actionDescription.ToLower() + ".", "e");
             instructionsPresent = true;
         }
