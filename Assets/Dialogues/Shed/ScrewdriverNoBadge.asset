@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: How can I use this screwdriver to get in?
   nextSentence: {fileID: 0}
-  itemId: 2
+  itemId: 2,6,7
   options: []

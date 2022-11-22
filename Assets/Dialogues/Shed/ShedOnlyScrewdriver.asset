@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: I only have the screwdriver!
   nextSentence: {fileID: 11400000, guid: 009ba0707468141f5ab0be4f1182fed1, type: 2}
-  itemId: 2
+  itemId: 2,6,7
   options: []

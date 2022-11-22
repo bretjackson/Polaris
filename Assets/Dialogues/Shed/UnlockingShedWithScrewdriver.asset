@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: I remember I learned how to pick a lock at camp.
   nextSentence: {fileID: 11400000, guid: 38171cb7a3a36402b8a6bf702519a9f0, type: 2}
-  itemId: 2,4
+  itemId: 2,4,6,7
   options: []
