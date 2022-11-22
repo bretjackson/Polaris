@@ -4470,7 +4470,7 @@ MonoBehaviour:
   actionDescription: pick lock
   instructionManager: {fileID: 1847941618}
   invManager: {fileID: 768936032}
-  dTree: {fileID: 0}
+  dTree: {fileID: 11400000, guid: 018e346d2ebf3442487a1ec6113ade75, type: 2}
   dialogueManager: {fileID: 1847941613}
 --- !u!320 &1965322542
 PlayableDirector:
