@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using TMPro;
 
@@ -15,6 +16,8 @@ public class DialogueManager : MonoBehaviour
     private bool firstDialogue = true;
     // private string currentInstruction = null;
 
+    private List<int> conditionals = null;
+
     void Start() {
         // dialogueUIText.text = null;
         instructionManager.StartInstructions("Press F to turn on flashlight.", "f");
@@ -29,17 +32,45 @@ public class DialogueManager : MonoBehaviour
         // }
     }
 
+    public void AddConditionals(List<int> items) {
+        conditionals = items;
+    }
+
     public void StartDialogue(DialogueTree dialogueTree){
         dialogue = dialogueTree;
         currentSentence = dialogue.startingSentence;
-        dialogueCanvas.enabled = true;
-        DisplaySentence();
+        if(conditionals == null) {
+            dialogueCanvas.enabled = true;
+            DisplaySentence();
+        }
+        else {
+            bool isEqual = conditionals.OrderBy(x => x).SequenceEqual(currentSentence.getIds().OrderBy(x => x));
+            if(isEqual) {
+                dialogueCanvas.enabled = true;
+                DisplaySentence();
+            }
+            else{
+                AdvanceSentence();
+            }
+        }
     }
 
     public void AdvanceSentence(){
         if (dialogueUIText.text == currentSentence.text){
-            currentSentence = currentSentence.nextSentence;
-            DisplaySentence();
+            if(conditionals == null){
+                currentSentence = currentSentence.nextSentence;
+                DisplaySentence();
+            }
+            else {
+                bool isEqual = conditionals.OrderBy(x => x).SequenceEqual(dialogue.startingSentence.getIds().OrderBy(x => x));
+                if(isEqual) {
+                    currentSentence = currentSentence.nextSentence;
+                    DisplaySentence();
+                }
+                else {
+                    AdvanceSentence();
+                }
+            }
         }
         else {
             StopAllCoroutines();

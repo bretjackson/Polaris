@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: LockedShed
+  m_Name: ShedOnlyBadge
   m_EditorClassIdentifier: 
-  text: "I need a screwdriver to pick this lock. Maybe there\u2019s one lying around
-    here?"
-  nextSentence: {fileID: 11400000, guid: 87f02ad9bdad94d1898c03c536d9a66c, type: 2}
-  itemId: 
+  text: I only have the badge!
+  nextSentence: {fileID: 0}
+  itemId: 4
   options: []

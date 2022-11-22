@@ -11,10 +11,14 @@ public class UseItem : MonoBehaviour
     public string actionDescription;
     private PlayableDirector director;
 
-    // public DialogueManager dialogueManager;
     public InstructionManager instructionManager;
     public InventoryManager invManager;
-    
+
+    public DialogueTree dTree;
+    public DialogueManager dialogueManager;
+
+    //public ConditionalsManager conManager;
+
     private bool itemUsed = false;
     private bool instructionsPresent = false;
 
@@ -67,11 +71,20 @@ public class UseItem : MonoBehaviour
             }
         }
 
+        //conManager.CheckConditionals();
+        CheckConditionals();
+
         if (!itemUsed & invManContainsAll)
         {
             instructionManager.StartInstructions("Press E to use " + itemName.ToLower() + " to " + actionDescription.ToLower() + ".", "e");
             instructionsPresent = true;
         }
+    }
+
+    void CheckConditionals() {
+        List<int> invIds = invManager.GetIds();
+        dialogueManager.AddConditionals(invIds);
+        dialogueManager.StartDialogue(dTree);
     }
 
     void OnTriggerExit()

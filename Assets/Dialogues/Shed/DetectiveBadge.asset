@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DetectiveBadge
   m_EditorClassIdentifier: 
   text: My detective badge! I learned how to solve cases at camp.
-  nextSentence: {fileID: 0}
+  nextSentence: {fileID: 11400000, guid: bd4b52b41c3ce46bbbce413e4341a827, type: 2}
+  itemId: 0
   options: []

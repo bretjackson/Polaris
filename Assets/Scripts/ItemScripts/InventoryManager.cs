@@ -73,4 +73,12 @@ public class InventoryManager : MonoBehaviour
         }
         return false;
     }
+
+    public List<int> GetIds() {
+        List<int> idList = new List<int>();
+        foreach(Item i in items) {
+            idList.Add(i.id);
+        }
+        return idList;
+    }
 }
