@@ -15,4 +15,5 @@ MonoBehaviour:
   text: We used one of these at camp to chop firewood. Maybe I could use this for
     something later.
   nextSentence: {fileID: 0}
+  itemId: 
   options: []
