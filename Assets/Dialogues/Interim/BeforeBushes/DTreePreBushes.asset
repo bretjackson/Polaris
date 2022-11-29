@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef98fdfb613864f989fcc36315037561, type: 3}
-  m_Name: DTreePreStars
+  m_Name: DTreePreBushes
   m_EditorClassIdentifier: 
   characterName: 
   startingSentence: {fileID: 11400000, guid: d0d5655bd11544173bbf9c9c191c18a3, type: 2}
