@@ -44,13 +44,7 @@ public class DialogueManager : MonoBehaviour
         dialogueCanvas.enabled = true;
         DisplaySentence();
         if(conditionals != null) {
-            bool containsAll = true;
-            foreach(int id in conditionals) {
-                if (!currentSentence.getIds().Contains(id)) {
-                    containsAll = false;
-                }
-            }
-            if(!containsAll) {
+            if(!ContainsAllConditionals()) {
                 AdvanceSentence();
             }
         }
@@ -136,7 +130,7 @@ public class DialogueManager : MonoBehaviour
             sentence = currentSentence.text;
         }
         else {
-            if(IsEqual(conditionals, currentSentence.getIds())) {
+            if(ContainsAllConditionals()) {
                 sentence = currentSentence.text;
             }
         }
@@ -162,5 +156,16 @@ public class DialogueManager : MonoBehaviour
         currentSentence = null;
         dialogueUIText.text = null;
         conditionals = null;
+    }
+
+    private bool ContainsAllConditionals() {
+        // checks if all conditionals needed are in currentSentence ids 
+        bool containsAll = true;
+            foreach(int id in conditionals) {
+                if (!currentSentence.getIds().Contains(id)) {
+                    containsAll = false;
+                }
+            }
+            return containsAll;
     }
 }
