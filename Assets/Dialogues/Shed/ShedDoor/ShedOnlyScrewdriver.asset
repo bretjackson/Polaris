@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ShedOnlyScrewdriver
   m_EditorClassIdentifier: 
   text: How can I use the screwdriver to get in?
-  nextSentence: {fileID: 11400000, guid: 154c289c83d104a63b1b6e8fa177179c, type: 2}
-  itemId: 2,6,7
+  nextSentence: {fileID: 11400000, guid: ca2faf6c8dd3946a7b5448f63bf3a395, type: 2}
+  itemId: 2
   options: []

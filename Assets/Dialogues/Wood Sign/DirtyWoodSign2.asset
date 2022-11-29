@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: Beginning2
+  m_Name: DirtyWoodSign2
   m_EditorClassIdentifier: 
-  text: At least I got the lake water so the other kids will stop teasing me.
-  nextSentence: {fileID: 11400000, guid: b7b2b283561f94e2b9e0748ab232b247, type: 2}
+  text: If I can just wipe off all the mud...
+  nextSentence: {fileID: 11400000, guid: 6e5405f4a2b2f427696a172137e4a808, type: 2}
   itemId: 
   options: []

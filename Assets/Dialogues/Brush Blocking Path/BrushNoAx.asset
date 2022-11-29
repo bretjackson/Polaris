@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
   m_Name: BrushNoAx
   m_EditorClassIdentifier: 
-  text: I wish I had a tool to clear the trail. Maybe I could find a tool shed?
+  text: I wish I had something to clear this trail. I wonder if there's anything
+    out here.
   nextSentence: {fileID: 0}
+  itemId: 6,7
   options: []

@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: Beginning2
+  m_Script: {fileID: 11500000, guid: ef98fdfb613864f989fcc36315037561, type: 3}
+  m_Name: DTreeSign
   m_EditorClassIdentifier: 
-  text: At least I got the lake water so the other kids will stop teasing me.
-  nextSentence: {fileID: 11400000, guid: b7b2b283561f94e2b9e0748ab232b247, type: 2}
-  itemId: 
-  options: []
+  characterName: 
+  startingSentence: {fileID: 11400000, guid: 1b8a2c6e9540948e6a755cab56e2c993, type: 2}

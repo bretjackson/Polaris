@@ -15,5 +15,6 @@ MonoBehaviour:
   text: 'This sign is too dirty to read.
 
 '
-  nextSentence: {fileID: 0}
+  nextSentence: {fileID: 11400000, guid: 574dff6dc69914bc98544810febdbb26, type: 2}
+  itemId: 6,7
   options: []

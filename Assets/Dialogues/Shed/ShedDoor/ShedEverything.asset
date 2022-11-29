@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: Beginning2
+  m_Name: ShedEverything
   m_EditorClassIdentifier: 
-  text: At least I got the lake water so the other kids will stop teasing me.
-  nextSentence: {fileID: 11400000, guid: b7b2b283561f94e2b9e0748ab232b247, type: 2}
-  itemId: 
+  text: I remember I learned how to pick a lock at camp.
+  nextSentence: {fileID: 11400000, guid: 38171cb7a3a36402b8a6bf702519a9f0, type: 2}
+  itemId: 2,4
   options: []

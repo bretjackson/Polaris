@@ -26,7 +26,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update() {
         if (firstDialogue & instructionManager.currentInstructionKey == null) { // after flashlight on, begin dialogue
-            
+
             StartDialogue(beginningDialogue);
         }
         if (dialogueUIText.text != "" && Input.GetKeyDown("space")) {
@@ -44,7 +44,13 @@ public class DialogueManager : MonoBehaviour
         dialogueCanvas.enabled = true;
         DisplaySentence();
         if(conditionals != null) {
-            if(!IsEqual(conditionals, currentSentence.getIds())) {
+            bool containsAll = true;
+            foreach(int id in conditionals) {
+                if (!currentSentence.getIds().Contains(id)) {
+                    containsAll = false;
+                }
+            }
+            if(!containsAll) {
                 AdvanceSentence();
             }
         }

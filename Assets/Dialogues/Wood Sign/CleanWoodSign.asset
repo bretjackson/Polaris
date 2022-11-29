@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
   m_Name: CleanWoodSign
   m_EditorClassIdentifier: 
-  text: "Camp Polaris\u20131.5 miles North. But which way\u2019s north?"
+  text: "There we go. \"Camp Polaris\u20131.5 miles North.\" But which way\u2019s
+    north?"
   nextSentence: {fileID: 0}
+  itemId: 
   options: []

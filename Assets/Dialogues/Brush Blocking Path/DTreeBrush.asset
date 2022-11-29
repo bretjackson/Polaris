@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef98fdfb613864f989fcc36315037561, type: 3}
-  m_Name: DTreeShed
+  m_Name: DTreeBrush
   m_EditorClassIdentifier: 
   characterName: 
-  startingSentence: {fileID: 11400000, guid: ca2faf6c8dd3946a7b5448f63bf3a395, type: 2}
+  startingSentence: {fileID: 11400000, guid: a3c999ecde0b64e65be11e9211effcb9, type: 2}
