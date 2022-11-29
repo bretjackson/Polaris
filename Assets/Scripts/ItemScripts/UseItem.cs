@@ -91,6 +91,7 @@ public class UseItem : MonoBehaviour
     {
         instructionManager.EndInstructions();
         instructionsPresent = false;
+        dialogueManager.EndDialogue();
     }
 
     void Use()
@@ -101,7 +102,7 @@ public class UseItem : MonoBehaviour
         }
         // trigger the event for that item
         director.Play();
-
+        dialogueManager.EndDialogue();
         Collider collider = gameObject.GetComponent<Collider>();
         collider.enabled = false;
     }
