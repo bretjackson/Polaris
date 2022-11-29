@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     private bool firstDialogue = true;
 
     private List<int> conditionals = null;
+    private bool doNotAdvance = false; // stop advancing sentences once conditional has been found
 
     void Start() {
         // dialogueUIText.text = null;
@@ -39,6 +40,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogue(DialogueTree dialogueTree){
+        doNotAdvance = false;
         dialogue = dialogueTree;
         currentSentence = dialogue.startingSentence;
         dialogueCanvas.enabled = true;
@@ -48,24 +50,6 @@ public class DialogueManager : MonoBehaviour
                 AdvanceSentence();
             }
         }
-        // if(conditionals == null) {
-        //     dialogueCanvas.enabled = true;
-        //     DisplaySentence();
-        // }
-        // else {
-        //     //bool isEqual = conditionals.OrderBy(x => x).SequenceEqual(currentSentence.getIds().OrderBy(x => x));
-        //     if(IsEqual(conditionals, currentSentence.getIds())) {
-        //         // Debug.Log(String.Format("StartIsEqual"));
-        //         // Debug.Log(String.Format("Con: " + conditionals[0] + conditionals[1]));
-        //         // Debug.Log(String.Format("Sen: " + currentSentence.getIds()[0] + currentSentence.getIds()[1]));
-        //         dialogueCanvas.enabled = true;
-        //         DisplaySentence();
-        //     }
-        //     else{
-        //         AdvanceSentence();
-        //         Debug.Log(String.Format("Start"));
-        //     }
-        // }
     }
 
     public void AdvanceSentence(){
@@ -82,46 +66,24 @@ public class DialogueManager : MonoBehaviour
         }
         while (dialogueUIText.text == ""){
             currentSentence = currentSentence.nextSentence;
-            //Debug.Log(String.Format("Advance: " + currentSentence.getIds()[0] + currentSentence.getIds()));
             DisplaySentence();
-            // if(conditionals == null){
-            //     DisplaySentence();
-            // }
-            //else {
-                // if(IsEqual(conditionals, nextSentence.getIds())) {
-                //     Debug.Log(String.Format("AdvanceIsEqual"));
-                //     currentSentence = nextSentence;
-                //     DisplaySentence();
-                //     //currentSentence = null;
-                // }
-                // else {
-                //     // Debug.Log(String.Format("Con: " + conditionals[0] + conditionals[1]));
-                //     // Debug.Log(String.Format("Sen: " + currentSentence.getIds()[0] + currentSentence.getIds()[1]));
-                //     if(nextSentence == null) {
-                //         currentSentence = nextSentence;
-                //         DisplaySentence();
-                //     }
-                //     AdvanceSentence();
-                //     Debug.Log(String.Format("Advance: " + nextSentence.getIds()[0] + nextSentence.getIds()[1]));
-                // }
-            //}
         }
     }
 
-    bool IsEqual(List<int> a, List<int> b) {
-        if(a.Count != b.Count) {
-            return false;
-        }
-        foreach(int i in a) {
-            if(!b.Contains(i)) {
-                return false;
-            }
-        }
-        return true;
-    }
+    // bool IsEqual(List<int> a, List<int> b) {
+    //     if(a.Count != b.Count) {
+    //         return false;
+    //     }
+    //     foreach(int i in a) {
+    //         if(!b.Contains(i)) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
 
     public void DisplaySentence(){
-        if (currentSentence == null){
+        if (currentSentence == null | doNotAdvance){
             EndDialogue();
             return;
         }
@@ -130,11 +92,11 @@ public class DialogueManager : MonoBehaviour
             sentence = currentSentence.text;
         }
         else {
-            if(ContainsAllConditionals()) {
+            if(ContainsAllConditionals()) { // correct conditional dialogue has been found
                 sentence = currentSentence.text;
+                doNotAdvance = true;
             }
         }
-        //dialogueUIText.text = sentence;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
         if (firstDialogue && sentence != "") {
@@ -161,8 +123,9 @@ public class DialogueManager : MonoBehaviour
     private bool ContainsAllConditionals() {
         // checks if all conditionals needed are in currentSentence ids 
         bool containsAll = true;
-            foreach(int id in conditionals) {
-                if (!currentSentence.getIds().Contains(id)) {
+        List<int> curr = currentSentence.getIds();
+            foreach(int id in curr) {
+                if (!conditionals.Contains(id)) {
                     containsAll = false;
                 }
             }
