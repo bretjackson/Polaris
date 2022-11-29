@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: ShedOnlyBadge
+  m_Name: ShedNothing
   m_EditorClassIdentifier: 
-  text: I only have the badge!
+  text: "This is locked. I don\u2019t know how to open this."
   nextSentence: {fileID: 0}
-  itemId: 4,6,7
+  itemId: 6,7
   options: []

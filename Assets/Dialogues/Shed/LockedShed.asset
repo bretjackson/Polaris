@@ -15,5 +15,5 @@ MonoBehaviour:
   text: "I need a screwdriver to pick this lock. Maybe there\u2019s one lying around
     here?"
   nextSentence: {fileID: 11400000, guid: 87f02ad9bdad94d1898c03c536d9a66c, type: 2}
-  itemId: 6,7
+  itemId: 4,6,7
   options: []

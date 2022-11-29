@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
   m_Name: ShedOnlyScrewdriver
   m_EditorClassIdentifier: 
-  text: I only have the screwdriver!
-  nextSentence: {fileID: 11400000, guid: 009ba0707468141f5ab0be4f1182fed1, type: 2}
+  text: How can I use the screwdriver to get in?
+  nextSentence: {fileID: 11400000, guid: 154c289c83d104a63b1b6e8fa177179c, type: 2}
   itemId: 2,6,7
   options: []
