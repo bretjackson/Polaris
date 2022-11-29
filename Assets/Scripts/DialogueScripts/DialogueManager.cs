@@ -29,7 +29,7 @@ public class DialogueManager : MonoBehaviour
 
             StartDialogue(beginningDialogue);
         }
-        if (dialogueUIText.text != "" && Input.GetKeyDown("space")) {
+        if (dialogueUIText.text != "" && dialogueUIText.text != null && Input.GetKeyDown("space")) {
             AdvanceSentence();
         }
     }
