@@ -6,7 +6,9 @@ using UnityEngine;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
-{
+{   
+    //Dialogue tree should stop after action completes? so it shouldn't keep playing after shed has been opened
+
     public TextMeshProUGUI dialogueUIText;
     public Canvas dialogueCanvas;
 
@@ -64,6 +66,17 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void AdvanceSentence(){
+        if(dialogueUIText.text == currentSentence.text) {
+            currentSentence = currentSentence.nextSentence;
+            DisplaySentence();
+        }
+        else {
+            if(dialogueUIText.text != "") {
+                StopAllCoroutines();
+                dialogueUIText.text = currentSentence.text;
+                // currentSentence = null;
+            }
+        }
         while (dialogueUIText.text == ""){
             currentSentence = currentSentence.nextSentence;
             //Debug.Log(String.Format("Advance: " + currentSentence.getIds()[0] + currentSentence.getIds()));
@@ -90,11 +103,6 @@ public class DialogueManager : MonoBehaviour
                 // }
             //}
         }
-        // if(dialogueUIText.text != "") {
-        //     StopAllCoroutines();
-        //     dialogueUIText.text = currentSentence.text;
-        //     // currentSentence = null;
-        // }
     }
 
     bool IsEqual(List<int> a, List<int> b) {
@@ -143,5 +151,6 @@ public class DialogueManager : MonoBehaviour
         dialogueCanvas.enabled = false;
         currentSentence = null;
         dialogueUIText.text = null;
+        conditionals = null;
     }
 }

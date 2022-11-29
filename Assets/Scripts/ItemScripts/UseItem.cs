@@ -101,5 +101,8 @@ public class UseItem : MonoBehaviour
         }
         // trigger the event for that item
         director.Play();
+
+        Collider collider = gameObject.GetComponent<Collider>();
+        collider.enabled = false;
     }
 }
