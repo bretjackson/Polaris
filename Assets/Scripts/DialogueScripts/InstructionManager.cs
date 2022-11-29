@@ -10,7 +10,7 @@ public class InstructionManager : MonoBehaviour
     public Canvas instructionalCanvas;
 
     private string currentInstruction = null;
-    private string currentInstructionKey = null;
+    public string currentInstructionKey = null;
 
     // Update is called once per frame
     void Update()

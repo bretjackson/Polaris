@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.07058824, g: 0.07872033, b: 0.10980392, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.015
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0009996623, g: 0.0010221412, b: 0.0009996623, a: 1}
+  m_IndirectSpecularColor: {r: 0.0009963397, g: 0.0010251341, b: 0.0009963397, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1385,7 +1385,7 @@ GameObject:
   - component: {fileID: 423809723}
   - component: {fileID: 423809722}
   m_Layer: 0
-  m_Name: FaunaBadge
+  m_Name: TrackingBadge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1463,7 +1463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423809716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 416.331, y: 5.425, z: 332.373}
+  m_LocalPosition: {x: 374.43, y: 3.299, z: 238.194}
   m_LocalScale: {x: 0.2, y: 0.01, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1656,19 +1656,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: debf96f1c362241508d648282b57e387, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 303.17
+      value: 281.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: debf96f1c362241508d648282b57e387, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.76
+      value: 7.78
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: debf96f1c362241508d648282b57e387, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 532.435
+      value: 205.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: debf96f1c362241508d648282b57e387, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7064895
+      value: 0.77879095
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: debf96f1c362241508d648282b57e387, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1676,7 +1676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: debf96f1c362241508d648282b57e387, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.70772356
+      value: 0.62728363
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: debf96f1c362241508d648282b57e387, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1688,7 +1688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: debf96f1c362241508d648282b57e387, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90.1
+      value: 77.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: debf96f1c362241508d648282b57e387, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -4311,6 +4311,7 @@ MonoBehaviour:
   dialogueUIText: {fileID: 1318503344}
   dialogueCanvas: {fileID: 1847941616}
   instructionManager: {fileID: 1847941618}
+  beginningDialogue: {fileID: 11400000, guid: b91b2c2dec39147a2a41835694cd2ab4, type: 2}
 --- !u!114 &1847941614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4409,6 +4410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructionsUIText: {fileID: 2068057913}
   instructionalCanvas: {fileID: 1847941616}
+  currentInstructionKey: 
 --- !u!1001 &1965322538
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: DetectiveBadge
+  m_Name: Beginning1
   m_EditorClassIdentifier: 
-  text: My detective badge! We learned how to solve cases and pick locks.
-  nextSentence: {fileID: 11400000, guid: bd4b52b41c3ce46bbbce413e4341a827, type: 2}
-  itemId: 0
+  text: "It\u2019s so dark out here without the campfire..."
+  nextSentence: {fileID: 11400000, guid: b13649c6be03a4d07812311dd9e0f024, type: 2}
+  itemId: 
   options: []

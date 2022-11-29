@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: DetectiveBadge
+  m_Name: TrackingBadge2
   m_EditorClassIdentifier: 
-  text: My detective badge! We learned how to solve cases and pick locks.
-  nextSentence: {fileID: 11400000, guid: bd4b52b41c3ce46bbbce413e4341a827, type: 2}
-  itemId: 0
+  text: "I knew I didn\u2019t iron them on right. Sophia used to help me..."
+  nextSentence: {fileID: 11400000, guid: 2bfcfb8a96c22450da5281843ede5a44, type: 2}
+  itemId: 
   options: []

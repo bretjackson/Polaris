@@ -7,12 +7,11 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {   
-    //Dialogue tree should stop after action completes? so it shouldn't keep playing after shed has been opened
-
     public TextMeshProUGUI dialogueUIText;
     public Canvas dialogueCanvas;
 
     public InstructionManager instructionManager;
+    public DialogueTree beginningDialogue;
 
     private DialogueTree dialogue;
     private Sentence currentSentence = null;
@@ -26,7 +25,11 @@ public class DialogueManager : MonoBehaviour
     }
 
     void Update() {
-        if (dialogueCanvas.enabled == true & Input.GetKeyDown("space")) {
+        if (firstDialogue & instructionManager.currentInstructionKey == null) { // after flashlight on, begin dialogue
+            
+            StartDialogue(beginningDialogue);
+        }
+        if (dialogueUIText.text != "" && Input.GetKeyDown("space")) {
             AdvanceSentence();
         }
     }
@@ -136,6 +139,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
         if (firstDialogue && sentence != "") {
             instructionManager.StartInstructions("Press Space to continue.", "space");
+            firstDialogue = false;
         }
     }
 

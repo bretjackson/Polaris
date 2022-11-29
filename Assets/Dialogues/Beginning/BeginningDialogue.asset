@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: DetectiveBadge
+  m_Script: {fileID: 11500000, guid: ef98fdfb613864f989fcc36315037561, type: 3}
+  m_Name: BeginningDialogue
   m_EditorClassIdentifier: 
-  text: My detective badge! We learned how to solve cases and pick locks.
-  nextSentence: {fileID: 11400000, guid: bd4b52b41c3ce46bbbce413e4341a827, type: 2}
-  itemId: 0
-  options: []
+  characterName: 
+  startingSentence: {fileID: 11400000, guid: 7225b4948aeb245589919216c4ee9cfe, type: 2}
