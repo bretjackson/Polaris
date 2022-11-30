@@ -10,4 +10,8 @@ public class DialogueTrigger : MonoBehaviour
     public void OnTriggerEnter(Collider other){
         dialogueManager.StartDialogue(dialogue);
     }
+    public void OnTriggerExit(Collider other){
+        Collider collider = gameObject.GetComponent<Collider>();
+        collider.enabled = false;
+    }
 }

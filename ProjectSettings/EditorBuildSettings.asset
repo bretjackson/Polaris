@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ScaryStory.unity
+    guid: 0a746b7744d9548a48ee853d4c69dc82
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 8e1af487916284ce3a0c7fa083b3e973
   m_configObjects: {}
