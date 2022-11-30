@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
 
     private DialogueTree dialogue;
     private Sentence currentSentence = null;
-    private bool firstDialogue = true;
+    private bool firstDialogue;
 
     private List<int> conditionals = null;
     private bool doNotAdvance = false; // stop advancing sentences once conditional has been found
@@ -23,11 +23,11 @@ public class DialogueManager : MonoBehaviour
     void Start() {
         // dialogueUIText.text = null;
         instructionManager.StartInstructions("Press F to turn on flashlight.", "f");
+        firstDialogue = true;
     }
 
     void Update() {
         if (firstDialogue & instructionManager.currentInstructionKey == null) { // after flashlight on, begin dialogue
-
             StartDialogue(beginningDialogue);
         }
         if (dialogueUIText.text != "" && dialogueUIText.text != null && Input.GetKeyDown("space")) {
@@ -53,7 +53,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void AdvanceSentence(){
-        if(dialogueUIText.text == currentSentence.text) {
+        if(dialogueUIText != null && dialogueUIText.text == currentSentence.text) {
             currentSentence = currentSentence.nextSentence;
             DisplaySentence();
         }
@@ -99,7 +99,7 @@ public class DialogueManager : MonoBehaviour
         }
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        if (firstDialogue && sentence != "") {
+        if (firstDialogue && currentSentence != null) {
             instructionManager.StartInstructions("Press Space to continue.", "space");
             firstDialogue = false;
         }
