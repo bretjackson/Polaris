@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: ScaryNoise2
+  m_Name: LaterNoise1
   m_EditorClassIdentifier: 
-  text: I can't do this on my own! Sophia was always the brave one, not me.
-  nextSentence: {fileID: 0}
+  text: I think that was a fox... I remember I had to learn about them at camp to
+    get my tracking badge.
+  nextSentence: {fileID: 11400000, guid: af66c8e9f603a4b619afa2473432033f, type: 2}
   itemId: 
   options: []

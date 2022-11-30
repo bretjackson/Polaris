@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: ScaryNoise1
+  m_Script: {fileID: 11500000, guid: ef98fdfb613864f989fcc36315037561, type: 3}
+  m_Name: DTreeLaterNoise
   m_EditorClassIdentifier: 
-  text: What was that?
-  nextSentence: {fileID: 0}
-  itemId: 
-  options: []
+  characterName: 
+  startingSentence: {fileID: 11400000, guid: aae8bcf5fa5f64bf5b1dac6813978460, type: 2}
