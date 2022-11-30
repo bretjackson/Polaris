@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
   m_Name: Beginning5
   m_EditorClassIdentifier: 
-  text: "Anything could be out here watching me\u2026"
+  text: Maybe someone from camp will just come find me? Right?
   nextSentence: {fileID: 11400000, guid: ce63eb1f7fb094be281f78017ce38ac4, type: 2}
   itemId: 
   options: []

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
   m_Name: Beginning6
   m_EditorClassIdentifier: 
-  text: "Sophia would know where to go. I wish she didn\u2019t go to college and
-    would still come to camp with me."
+  text: "Sophia would know what to do. I wish she didn\u2019t go to college and could
+    still come to camp with me."
   nextSentence: {fileID: 0}
   itemId: 
   options: []

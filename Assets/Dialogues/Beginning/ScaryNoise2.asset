@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: Beginning3
+  m_Name: ScaryNoise2
   m_EditorClassIdentifier: 
-  text: "I don\u2019t know if I\u2019m going the right way back to camp. I\u2019ve
-    never been this deep in the woods without my sister."
-  nextSentence: {fileID: 11400000, guid: 4beb41e008f4344a7925c1df40f8a004, type: 2}
+  text: I can't do this on my own! Sophia was always the brave one, not me.
+  nextSentence: {fileID: 0}
   itemId: 
   options: []
