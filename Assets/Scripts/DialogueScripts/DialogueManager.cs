@@ -70,18 +70,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    // bool IsEqual(List<int> a, List<int> b) {
-    //     if(a.Count != b.Count) {
-    //         return false;
-    //     }
-    //     foreach(int i in a) {
-    //         if(!b.Contains(i)) {
-    //             return false;
-    //         }
-    //     }
-    //     return true;
-    // }
-
     public void DisplaySentence(){
         if (currentSentence == null | doNotAdvance){
             EndDialogue();
@@ -99,8 +87,10 @@ public class DialogueManager : MonoBehaviour
         }
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        if (firstDialogue && currentSentence != null) {
+        if (instructionManager.currentInstructionKey == null) {
             instructionManager.StartInstructions("Press Space to continue.", "space");
+        }
+        if (firstDialogue && currentSentence != null) {
             firstDialogue = false;
         }
     }
