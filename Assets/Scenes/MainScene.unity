@@ -2257,12 +2257,6 @@ MonoBehaviour:
   items:
   - {fileID: 11400000, guid: afd520d210a0146e9b87bda9a202d76c, type: 2}
   - {fileID: 11400000, guid: 0b40233e0f9964c2fb1aef8b251d24b9, type: 2}
-  - {fileID: 11400000, guid: 0b40233e0f9964c2fb1aef8b251d24b9, type: 2}
-  - {fileID: 11400000, guid: 0b40233e0f9964c2fb1aef8b251d24b9, type: 2}
-  - {fileID: 11400000, guid: 0b40233e0f9964c2fb1aef8b251d24b9, type: 2}
-  - {fileID: 11400000, guid: 0b40233e0f9964c2fb1aef8b251d24b9, type: 2}
-  - {fileID: 11400000, guid: 0b40233e0f9964c2fb1aef8b251d24b9, type: 2}
-  - {fileID: 11400000, guid: 0b40233e0f9964c2fb1aef8b251d24b9, type: 2}
   ItemContent: {fileID: 320683727}
   InventoryItem: {fileID: 3893060395419658933, guid: 7830f92c739f24b8ba002cd73a375ad3, type: 3}
   Inventory: {fileID: 3521487}
