@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: "It\u2019s so dark out here without the campfire..."
   nextSentence: {fileID: 11400000, guid: b13649c6be03a4d07812311dd9e0f024, type: 2}
-  itemId: 
+  itemId: 6,7
   options: []

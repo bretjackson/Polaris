@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: What was that?!?
   nextSentence: {fileID: 11400000, guid: e8eeb383875ea4951a08a995999afb70, type: 2}
-  itemId: 
+  itemId: 6,7
   options: []

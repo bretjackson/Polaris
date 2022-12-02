@@ -15,5 +15,5 @@ MonoBehaviour:
   text: "Sophia would know what to do. I wish she didn\u2019t go to college and could
     still come to camp with me."
   nextSentence: {fileID: 0}
-  itemId: 
+  itemId: 6,7
   options: []

@@ -15,5 +15,5 @@ MonoBehaviour:
   text: I think that was a fox... I remember I had to learn about them at camp to
     get my tracking badge.
   nextSentence: {fileID: 11400000, guid: af66c8e9f603a4b619afa2473432033f, type: 2}
-  itemId: 
+  itemId: 6,7
   options: []

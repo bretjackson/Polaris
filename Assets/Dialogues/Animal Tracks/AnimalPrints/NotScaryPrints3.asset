@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: These look like squirrel tracks.
   nextSentence: {fileID: 0}
+  itemId: 6,7
   options: []

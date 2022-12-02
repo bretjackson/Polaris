@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: "I knew I didn\u2019t iron them on right. Sophia used to help me..."
   nextSentence: {fileID: 11400000, guid: 2bfcfb8a96c22450da5281843ede5a44, type: 2}
-  itemId: 
+  itemId: 6,7
   options: []

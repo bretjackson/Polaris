@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Maybe the stars can help me orient myself?
   nextSentence: {fileID: 0}
+  itemId: 3
   options: []

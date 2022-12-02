@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: "My tracking merit badge! It must\u2019ve fallen off my vest\u2026"
   nextSentence: {fileID: 11400000, guid: 3a5c7bed1e3314eb597613018202f04f, type: 2}
-  itemId: 
+  itemId: 6,7
   options: []

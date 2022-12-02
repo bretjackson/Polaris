@@ -15,5 +15,5 @@ MonoBehaviour:
   text: "I don\u2019t know if I\u2019m going the right way back to camp. I\u2019ve
     never been this deep in the woods without my sister."
   nextSentence: {fileID: 11400000, guid: 4beb41e008f4344a7925c1df40f8a004, type: 2}
-  itemId: 
+  itemId: 6,7
   options: []

@@ -15,5 +15,5 @@ MonoBehaviour:
   text: "Oh no\u2026 Two of my other badges are missing too. They must\u2019ve fallen
     off on my way to the lake."
   nextSentence: {fileID: 0}
-  itemId: 
+  itemId: 6,7
   options: []

@@ -15,5 +15,5 @@ MonoBehaviour:
   text: I think Sophia would be proud of me. It was brave of me to come all this
     way by myself.
   nextSentence: {fileID: 0}
-  itemId: 
+  itemId: 6,7
   options: []

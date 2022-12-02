@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Did they want me to get lost? What kind of friends would do that?
   nextSentence: {fileID: 0}
-  itemId: 
+  itemId: 6,7
   options: []

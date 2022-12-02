@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Maybe someone from camp will just come find me? Right?
   nextSentence: {fileID: 11400000, guid: ce63eb1f7fb094be281f78017ce38ac4, type: 2}
-  itemId: 
+  itemId: 6,7
   options: []

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: "It won\u2019t hurt me as long as I stay away from it."
   nextSentence: {fileID: 0}
-  itemId: 
+  itemId: 6,7
   options: []

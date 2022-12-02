@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: "That\u2019s camp! I actually made it back!"
   nextSentence: {fileID: 0}
-  itemId: 
+  itemId: 6,7
   options: []

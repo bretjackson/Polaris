@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: At least I got the lake water so the other kids will stop teasing me.
   nextSentence: {fileID: 11400000, guid: b7b2b283561f94e2b9e0748ab232b247, type: 2}
-  itemId: 
+  itemId: 6,7
   options: []

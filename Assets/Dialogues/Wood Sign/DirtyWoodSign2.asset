@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: If I can just wipe off all the mud...
   nextSentence: {fileID: 11400000, guid: 6e5405f4a2b2f427696a172137e4a808, type: 2}
-  itemId: 
+  itemId: 6,7
   options: []

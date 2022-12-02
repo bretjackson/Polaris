@@ -15,5 +15,5 @@ MonoBehaviour:
   text: "There we go. \"Camp Polaris\u20131.5 miles North.\" But which way\u2019s
     north?"
   nextSentence: {fileID: 0}
-  itemId: 
+  itemId: 6,7
   options: []

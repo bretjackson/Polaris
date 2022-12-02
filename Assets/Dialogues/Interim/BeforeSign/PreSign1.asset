@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: "I wonder if the others knew I would get lost out here\u2026"
   nextSentence: {fileID: 11400000, guid: f1cf888ebfe5748838b81de21e70525f, type: 2}
-  itemId: 
+  itemId: 6,7
   options: []
