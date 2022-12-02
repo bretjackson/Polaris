@@ -15,5 +15,5 @@ MonoBehaviour:
   text: This trail is totally blocked off. I wonder if there was something in that
     shed that could help.
   nextSentence: {fileID: 11400000, guid: 8fb307adb56164783a3d4fa63365020f, type: 2}
-  itemId: 0
+  itemId: 0,6,7
   options: []

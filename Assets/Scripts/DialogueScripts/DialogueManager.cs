@@ -52,11 +52,15 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-        private bool ContainsAllConditionals() {
+    private bool ContainsAllConditionals() {
         // checks if all conditionals needed are in currentSentence ids 
         bool containsAll = true;
-        List<int> curr = currentSentence.getIds(); //
+        List<int> curr = currentSentence.getIds(); 
+        foreach(int c in conditionals) {
+            print(c);
+        }
             foreach(int id in curr) {
+                print(id);
                 if (!conditionals.Contains(id)) {
                     containsAll = false;
                 }
