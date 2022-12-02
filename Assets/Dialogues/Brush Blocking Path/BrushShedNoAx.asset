@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: BrushNoAx
+  m_Name: BrushShedNoAx
   m_EditorClassIdentifier: 
-  text: I wish I had something to clear this trail. I wonder if there's anything
-    out here.
-  nextSentence: {fileID: 0}
-  itemId: 6,7
+  text: This trail is totally blocked off. I wonder if there was something in that
+    shed that could help.
+  nextSentence: {fileID: 11400000, guid: 8fb307adb56164783a3d4fa63365020f, type: 2}
+  itemId: 0
   options: []

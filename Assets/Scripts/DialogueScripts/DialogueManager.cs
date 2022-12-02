@@ -11,19 +11,24 @@ public class DialogueManager : MonoBehaviour
     public Canvas dialogueCanvas;
 
     public InstructionManager instructionManager;
-    public DialogueTree beginningDialogue;
 
     private DialogueTree dialogue;
     private Sentence currentSentence = null;
+
     private bool firstDialogue;
+    public DialogueTree beginningDialogue;
 
     private List<int> conditionals = null;
     private bool doNotAdvance = false; // stop advancing sentences once conditional has been found
 
+    public bool shedReached;
+    public bool bushesReached;
+
     void Start() {
-        // dialogueUIText.text = null;
         instructionManager.StartInstructions("Press F to turn on flashlight.", "f");
         firstDialogue = true;
+        shedReached = false;
+        bushesReached = false;
     }
 
     void Update() {
@@ -36,7 +41,27 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void AddConditionals(List<int> items) {
+        // conditionals = current inventory and locations visited
         conditionals = items;
+        // 0 = been to the shed, -1 = been to the bushes
+        if (shedReached) {
+            conditionals.Add(0);
+        }
+        if (bushesReached) {
+            conditionals.Add(-1);
+        }
+    }
+
+        private bool ContainsAllConditionals() {
+        // checks if all conditionals needed are in currentSentence ids 
+        bool containsAll = true;
+        List<int> curr = currentSentence.getIds(); //
+            foreach(int id in curr) {
+                if (!conditionals.Contains(id)) {
+                    containsAll = false;
+                }
+            }
+            return containsAll;
     }
 
     public void StartDialogue(DialogueTree dialogueTree){
@@ -61,7 +86,6 @@ public class DialogueManager : MonoBehaviour
             if(dialogueUIText.text != "") {
                 StopAllCoroutines();
                 dialogueUIText.text = currentSentence.text;
-                // currentSentence = null;
             }
         }
         while (dialogueUIText.text == ""){
@@ -108,17 +132,5 @@ public class DialogueManager : MonoBehaviour
         currentSentence = null;
         dialogueUIText.text = null;
         conditionals = null;
-    }
-
-    private bool ContainsAllConditionals() {
-        // checks if all conditionals needed are in currentSentence ids 
-        bool containsAll = true;
-        List<int> curr = currentSentence.getIds();
-            foreach(int id in curr) {
-                if (!conditionals.Contains(id)) {
-                    containsAll = false;
-                }
-            }
-            return containsAll;
     }
 }

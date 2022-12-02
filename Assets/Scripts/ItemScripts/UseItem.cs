@@ -79,8 +79,16 @@ public class UseItem : MonoBehaviour
             instructionManager.StartInstructions("Press E to use " + itemName.ToLower() + " to " + actionDescription.ToLower() + ".", "e");
             instructionsPresent = true;
         }
-    }
 
+        if (gameObject.tag == "Bushes") {
+            dialogueManager.bushesReached = true;
+        }
+        if (gameObject.tag == "Shed") {
+            dialogueManager.shedReached = true;
+        }
+        
+    }
+    
     void CheckConditionals() {
         List<int> invIds = invManager.GetIds();
         dialogueManager.AddConditionals(invIds);

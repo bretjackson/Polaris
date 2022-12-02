@@ -3224,7 +3224,7 @@ GameObject:
   - component: {fileID: 1340136820}
   m_Layer: 0
   m_Name: Bushes
-  m_TagString: Untagged
+  m_TagString: Bushes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4384,6 +4384,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1158958694447344, guid: b518e4023293f6747bb776b6384a8f7f, type: 3}
       propertyPath: m_Name
+      value: Shed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158958694447344, guid: b518e4023293f6747bb776b6384a8f7f, type: 3}
+      propertyPath: m_TagString
       value: Shed
       objectReference: {fileID: 0}
     - target: {fileID: 1301864653480444, guid: b518e4023293f6747bb776b6384a8f7f, type: 3}

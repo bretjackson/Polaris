@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: Ax
+  m_Name: BrushNoShed
   m_EditorClassIdentifier: 
-  text: We used one of these at camp to chop firewood. Maybe I could use this for
-    something later.
+  text: I wish I had something to clear this trail. Maybe I should try the other
+    way back at that fork.
   nextSentence: {fileID: 0}
   itemId: 6,7
   options: []

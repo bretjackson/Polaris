@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: AxDialogueTree
   m_EditorClassIdentifier: 
   characterName: 
-  startingSentence: {fileID: 11400000, guid: ab48a375511e24a27a04e005e672f486, type: 2}
+  startingSentence: {fileID: 11400000, guid: 94afdcad51ed54781ae20ca14063807f, type: 2}

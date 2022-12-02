@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: Ax
+  m_Name: AxBushesFirst
   m_EditorClassIdentifier: 
-  text: We used one of these at camp to chop firewood. Maybe I could use this for
-    something later.
-  nextSentence: {fileID: 0}
-  itemId: 6,7
+  text: We used one of these at camp to chop firewood. Maybe I could use this to
+    get past those bushes.
+  nextSentence: {fileID: 11400000, guid: ab48a375511e24a27a04e005e672f486, type: 2}
+  itemId: -1
   options: []
