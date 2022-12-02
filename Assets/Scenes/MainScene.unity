@@ -341,7 +341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &74264336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4271,6 +4271,8 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 1847941616}
   instructionManager: {fileID: 1847941618}
   beginningDialogue: {fileID: 11400000, guid: b91b2c2dec39147a2a41835694cd2ab4, type: 2}
+  shedReached: 0
+  bushesReached: 0
 --- !u!114 &1847941614
 MonoBehaviour:
   m_ObjectHideFlags: 0
