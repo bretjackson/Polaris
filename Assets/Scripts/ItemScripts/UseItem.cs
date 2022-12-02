@@ -17,28 +17,18 @@ public class UseItem : MonoBehaviour
     public DialogueTree dTree;
     public DialogueManager dialogueManager;
 
-    //public ConditionalsManager conManager;
-
     private bool itemUsed = false;
     private bool instructionsPresent = false;
 
-    private int id;
     private List<int> ids = new List<int>();
-    private bool multipleIds = false;
 
     void Awake() 
     {
         director = gameObject.GetComponent<PlayableDirector>();
-        // change itemId string to list or int
-        if (itemId.Contains(",")) {
-            multipleIds = true;
-            List<string> idsStr = itemId.Split(',').ToList();
-            foreach(string idStr in idsStr) {
-                ids.Add(int.Parse(idStr));
-            }
-        }
-        else {
-            id = int.Parse(itemId);
+        // set up required ids list needed to use this item
+        List<string> idsStr = itemId.Split(',').ToList();
+        foreach(string idStr in idsStr) {
+            ids.Add(int.Parse(idStr));
         }
     }
 
@@ -56,30 +46,25 @@ public class UseItem : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        // check if inventory manager contains all ids listed
-        bool invManContainsAll = false;
-        if (!multipleIds) { // id used, not ids
-            if (invManager.Contains(id)) {
-                invManContainsAll = true;
-            }
-        } else { // list of ids used
-            invManContainsAll = true;
-            foreach(int item in ids) {
-                if (!invManager.Contains(item)) {
-                    invManContainsAll = false;
-                }
+        // check if inventory manager contains all ids listed to use the item
+        bool invManContainsAll = true;
+        foreach(int item in ids) {
+            if (!invManager.Contains(item)) {
+                invManContainsAll = false;
             }
         }
 
-        //conManager.CheckConditionals();
+        // trigger dialogue from dialogueManager depending on conditionals
         CheckConditionals();
 
+        // if invManager contains necessary ids, allow ability to use item
         if (!itemUsed & invManContainsAll)
         {
             instructionManager.StartInstructions("Press E to use " + itemName.ToLower() + " to " + actionDescription.ToLower() + ".", "e");
             instructionsPresent = true;
         }
 
+        // update location-based conditionals
         if (gameObject.tag == "Bushes") {
             dialogueManager.bushesReached = true;
         }
@@ -104,12 +89,13 @@ public class UseItem : MonoBehaviour
 
     void Use()
     {   
+        // trigger the animation for using this item
         Animator animator = gameObject.GetComponent<Animator>();
         if (animator != null) {
             animator.enabled = true;
         }
-        // trigger the event for that item
         director.Play();
+
         dialogueManager.EndDialogue();
         Collider collider = gameObject.GetComponent<Collider>();
         collider.enabled = false;
