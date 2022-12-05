@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0009963397, g: 0.0010251341, b: 0.0009963397, a: 1}
+  m_IndirectSpecularColor: {r: 0.0009996623, g: 0.0010221412, b: 0.0009996623, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2486,6 +2486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: 6c445f272f17f48b3a380654a4353c24, type: 2}
   dialogueManager: {fileID: 1847941613}
+  invManager: {fileID: 768936032}
 --- !u!1 &955605414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2661,6 +2662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: 731a7729c92204640a40eaf4c2284482, type: 2}
   dialogueManager: {fileID: 1847941613}
+  invManager: {fileID: 768936032}
 --- !u!1001 &1094282703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3650,6 +3652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: dfd4058e150934586a4f4223096edbc1, type: 2}
   dialogueManager: {fileID: 1847941613}
+  invManager: {fileID: 768936032}
 --- !u!1001 &1538903605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3941,6 +3944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: 5d6b8685601f9478a983237a53be8170, type: 2}
   dialogueManager: {fileID: 1847941613}
+  invManager: {fileID: 768936032}
 --- !u!1 &1683096489
 GameObject:
   m_ObjectHideFlags: 0
@@ -4798,6 +4802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: 1437894231bb14ee986ee4ccf01ee049, type: 2}
   dialogueManager: {fileID: 1847941613}
+  invManager: {fileID: 768936032}
 --- !u!1 &2068057912
 GameObject:
   m_ObjectHideFlags: 0
