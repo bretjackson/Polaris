@@ -2059,7 +2059,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699743069}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
@@ -4817,16 +4817,20 @@ PrefabInstance:
       value: Flame
       objectReference: {fileID: 0}
     - target: {fileID: 7281132044891145230, guid: b6763604ad5c78246b36eccaf41736e7, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.4392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281132044891145230, guid: b6763604ad5c78246b36eccaf41736e7, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
+      value: 0.8207547
       objectReference: {fileID: 0}
     - target: {fileID: 7281132044891145230, guid: b6763604ad5c78246b36eccaf41736e7, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.7149544
+      value: 0.7088157
       objectReference: {fileID: 0}
     - target: {fileID: 7281132044891145230, guid: b6763604ad5c78246b36eccaf41736e7, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0
+      value: 0.42973477
       objectReference: {fileID: 0}
     - target: {fileID: 7281132044891145230, guid: b6763604ad5c78246b36eccaf41736e7, type: 3}
       propertyPath: InitialModule.startColor.minMaxState
@@ -4838,15 +4842,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7281132044891145329, guid: b6763604ad5c78246b36eccaf41736e7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7281132044891145329, guid: b6763604ad5c78246b36eccaf41736e7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7281132044891145329, guid: b6763604ad5c78246b36eccaf41736e7, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7281132044891145329, guid: b6763604ad5c78246b36eccaf41736e7, type: 3}
       propertyPath: m_LocalPosition.x
