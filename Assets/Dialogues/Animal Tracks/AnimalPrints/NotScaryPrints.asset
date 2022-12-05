@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: These look like deer tracks. Nothing to be afraid of.
   nextSentence: {fileID: 0}
-  itemId: 6,7
+  itemId: 5,6,7
   options: []

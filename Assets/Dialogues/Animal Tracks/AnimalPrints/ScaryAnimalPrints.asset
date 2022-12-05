@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ScaryAnimalPrints
   m_EditorClassIdentifier: 
   text: What kind of monster made these?
-  nextSentence: {fileID: 0}
+  nextSentence: {fileID: 11400000, guid: 9c5a285ee56ad4d218bb19f1116baf20, type: 2}
   itemId: 6,7
   options: []

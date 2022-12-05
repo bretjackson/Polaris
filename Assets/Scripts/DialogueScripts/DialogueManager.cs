@@ -52,7 +52,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private bool ContainsAllConditionals() {
+    private bool ContainsAllConditionals() { // also idk if contains is enough, in some situations it should equal it
         // checks if all conditionals needed are in currentSentence ids 
         bool containsAll = true;
         List<int> curr = currentSentence.getIds(); 
@@ -110,7 +110,9 @@ public class DialogueManager : MonoBehaviour
         else {
             if(ContainsAllConditionals()) { // correct conditional dialogue has been found
                 sentence = currentSentence.text;
-                doNotAdvance = true;
+                if(currentSentence.nextSentence == null) { //we should only doNotAdvance on the last sentence 
+                    doNotAdvance = true;  //bc if there are multiple sentences that need to play it will only play the first one...
+                }
             }
         }
         StopAllCoroutines();
