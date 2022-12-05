@@ -17,8 +17,15 @@ public class ItemPickup : MonoBehaviour
 
         // trigger dialogue
         if (dialogueManager != null) {
-            dialogueManager.StartDialogue(dialogue);
+            //dialogueManager.StartDialogue(dialogue);
+            CheckConditionals();
         }
+    }
+
+    public void CheckConditionals() {
+        List<int> invIds = InventoryManager.instance.GetIds();
+        dialogueManager.AddConditionals(invIds);
+        dialogueManager.StartDialogue(dialogue);
     }
 
     private void OnMouseDown()
