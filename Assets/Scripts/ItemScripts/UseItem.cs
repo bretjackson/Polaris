@@ -14,7 +14,7 @@ public class UseItem : MonoBehaviour
     public InstructionManager instructionManager;
     public InventoryManager invManager;
 
-    public DialogueTree dTree;
+    public List<DialogueTree> dTrees;
     public DialogueManager dialogueManager;
 
     private bool itemUsed = false;
@@ -77,7 +77,7 @@ public class UseItem : MonoBehaviour
     void CheckConditionals() {
         List<int> invIds = invManager.GetIds();
         dialogueManager.AddConditionals(invIds);
-        dialogueManager.StartDialogue(dTree);
+        dialogueManager.StartDialogue(dTrees);
     }
 
     void OnTriggerExit()

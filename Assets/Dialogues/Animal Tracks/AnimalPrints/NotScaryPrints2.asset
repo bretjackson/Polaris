@@ -15,5 +15,5 @@ MonoBehaviour:
   text: "These are rabbit tracks. Rabbits are prey animals and \u2018prey animal\u2019
     means not scary."
   nextSentence: {fileID: 0}
-  itemId: 6,7
+  itemId: 5,6,7
   options: []

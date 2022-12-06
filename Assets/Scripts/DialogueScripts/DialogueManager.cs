@@ -16,10 +16,10 @@ public class DialogueManager : MonoBehaviour
     private Sentence currentSentence = null;
 
     private bool firstDialogue;
-    public DialogueTree beginningDialogue;
+    public List<DialogueTree> beginningDialogue;
 
     private List<int> conditionals = null;
-    private bool doNotAdvance = false; // stop advancing sentences once conditional has been found
+    // private bool doNotAdvance = false; // stop advancing sentences once conditional has been found
 
     public bool shedReached;
     public bool bushesReached;
@@ -52,33 +52,61 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private bool ContainsAllConditionals() { // also idk if contains is enough, in some situations it should equal it
-        // checks if all conditionals needed are in currentSentence ids 
-        bool containsAll = true;
-        List<int> curr = currentSentence.getIds(); 
-        foreach(int c in conditionals) {
-            print(c);
-        }
-            foreach(int id in curr) {
-                print(id);
-                if (!conditionals.Contains(id)) {
-                    containsAll = false;
-                }
+    // private bool ContainsAllConditionals() { // also idk if contains is enough, in some situations it should equal it
+    //     // checks if all conditionals needed are in currentSentence ids 
+    //     bool containsAll = true;
+    //     List<int> curr = currentSentence.getIds(); 
+    //     foreach(int c in conditionals) {
+    //         print(c);
+    //     }
+    //         foreach(int id in curr) {
+    //             print(id);
+    //             if (!conditionals.Contains(id)) {
+    //                 containsAll = false;
+    //             }
+    //         }
+    //         return containsAll;
+    // }
+
+    private bool ContainsAllConditionals(DialogueTree dTree) {
+        // print("checking conditionals on dtree: " + dTree.startingSentence.text);
+         bool containsAll = true;
+         List<int> reqIDs = dTree.requiredIds;
+         foreach(int id in reqIDs) {
+            if (!conditionals.Contains(id)) {
+                print("does not contain id "+ id);
+                containsAll = false;
             }
-            return containsAll;
+         }
+         return containsAll;
     }
 
-    public void StartDialogue(DialogueTree dialogueTree){
-        doNotAdvance = false;
+    // public void StartDialogue(DialogueTree dialogueTree){
+    //     doNotAdvance = false;
+    //     dialogue = dialogueTree;
+    //     currentSentence = dialogue.startingSentence;
+    //     dialogueCanvas.enabled = true;
+    //     DisplaySentence();
+    //     if(conditionals != null) {
+    //         if(!ContainsAllConditionals()) {
+    //             AdvanceSentence();
+    //         }
+    //     }
+    // }
+
+    public void StartDialogue(List<DialogueTree> dialogueTrees)
+    {
+        DialogueTree dialogueTree = dialogueTrees[dialogueTrees.Count-1]; //default to last dialogueTree
+        foreach(DialogueTree d in dialogueTrees) {
+            if (ContainsAllConditionals(d)) {
+                dialogueTree = d;
+                break;
+            }
+        }
         dialogue = dialogueTree;
         currentSentence = dialogue.startingSentence;
         dialogueCanvas.enabled = true;
         DisplaySentence();
-        if(conditionals != null) {
-            if(!ContainsAllConditionals()) {
-                AdvanceSentence();
-            }
-        }
     }
 
     public void AdvanceSentence(){
@@ -87,19 +115,19 @@ public class DialogueManager : MonoBehaviour
             DisplaySentence();
         }
         else {
-            if(dialogueUIText.text != "") {
+            if(dialogueUIText.text != "") { // might not be needed anymore ???
                 StopAllCoroutines();
                 dialogueUIText.text = currentSentence.text;
             }
         }
-        while (dialogueUIText.text == ""){
-            currentSentence = currentSentence.nextSentence;
-            DisplaySentence();
-        }
+        // while (dialogueUIText.text == ""){
+        //     currentSentence = currentSentence.nextSentence;
+        //     DisplaySentence();
+        // }
     }
 
     public void DisplaySentence(){
-        if (currentSentence == null | doNotAdvance){
+        if (currentSentence == null){
             EndDialogue();
             return;
         }
@@ -108,12 +136,13 @@ public class DialogueManager : MonoBehaviour
             sentence = currentSentence.text;
         }
         else {
-            if(ContainsAllConditionals()) { // correct conditional dialogue has been found
-                sentence = currentSentence.text;
-                if(currentSentence.nextSentence == null) { //we should only doNotAdvance on the last sentence 
-                    doNotAdvance = true;  //bc if there are multiple sentences that need to play it will only play the first one...
-                }
-            }
+            sentence = currentSentence.text;
+            // if(ContainsAllConditionals()) { // correct conditional dialogue has been found
+            //     sentence = currentSentence.text;
+            //     // if(currentSentence.nextSentence == null) { //we should only doNotAdvance on the last sentence 
+            //     //     doNotAdvance = true;  //bc if there are multiple sentences that need to play it will only play the first one...
+            //     // }
+            // }
         }
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));

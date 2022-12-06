@@ -15,6 +15,6 @@ MonoBehaviour:
   text: 'I can use the ax to clear this brush.
 
 '
-  nextSentence: {fileID: 11400000, guid: c6529664d744145a89c5180dbf0db625, type: 2}
+  nextSentence: {fileID: 0}
   itemId: 1
   options: []

@@ -6,13 +6,14 @@ public class ItemPickup : MonoBehaviour
 {
     public Item item;
 
-    public DialogueTree dialogue;
+    public List<DialogueTree> dTrees;
     public DialogueManager dialogueManager;
+    public InventoryManager inventoryManager;
 
     void Pickup()
     {
-        InventoryManager.instance.Add(item);
-        InventoryManager.instance.ListItems();
+        inventoryManager.Add(item);
+        inventoryManager.ListItems();
         Destroy(gameObject);
 
         // trigger dialogue
@@ -25,7 +26,7 @@ public class ItemPickup : MonoBehaviour
     public void CheckConditionals() {
         List<int> invIds = InventoryManager.instance.GetIds();
         dialogueManager.AddConditionals(invIds);
-        dialogueManager.StartDialogue(dialogue);
+        dialogueManager.StartDialogue(dTrees);
     }
 
     private void OnMouseDown()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public DialogueTree dialogue;
+    public List<DialogueTree> dTrees;
     public DialogueManager dialogueManager;
 
     public InventoryManager invManager;
@@ -12,7 +12,7 @@ public class DialogueTrigger : MonoBehaviour
     public void CheckConditionals() {
         List<int> invIds = invManager.GetIds();
         dialogueManager.AddConditionals(invIds);
-        dialogueManager.StartDialogue(dialogue);
+        dialogueManager.StartDialogue(dTrees);
     }
 
     public void OnTriggerEnter(Collider other){

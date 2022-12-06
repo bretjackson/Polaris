@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef98fdfb613864f989fcc36315037561, type: 3}
   m_Name: DTreeEnding
   m_EditorClassIdentifier: 
-  characterName: 
-  startingSentence: {fileID: 0}
+  startingSentence: {fileID: 11400000, guid: d475f3801ab784942975c95fe0bbb5db, type: 2}
+  requiredIds: 

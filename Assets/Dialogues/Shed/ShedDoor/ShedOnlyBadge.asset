@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: "I need a screwdriver to pick this lock. Maybe there\u2019s one lying around
     here?"
-  nextSentence: {fileID: 11400000, guid: 154c289c83d104a63b1b6e8fa177179c, type: 2}
+  nextSentence: {fileID: 0}
   itemId: 4
   options: []

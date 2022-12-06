@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef98fdfb613864f989fcc36315037561, type: 3}
-  m_Name: DTreeScaryTracks1
+  m_Name: DTreeShedEverything
   m_EditorClassIdentifier: 
-  startingSentence: {fileID: 11400000, guid: f538f2b41a4c045f2ad2b00b51b31ce9, type: 2}
-  requiredIds: 
+  startingSentence: {fileID: 11400000, guid: 87f02ad9bdad94d1898c03c536d9a66c, type: 2}
+  requiredIds: 0200000004000000

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef98fdfb613864f989fcc36315037561, type: 3}
   m_Name: AxDialogueTree
   m_EditorClassIdentifier: 
-  characterName: 
-  startingSentence: {fileID: 11400000, guid: 94afdcad51ed54781ae20ca14063807f, type: 2}
+  startingSentence: {fileID: 11400000, guid: ab48a375511e24a27a04e005e672f486, type: 2}
+  requiredIds: 

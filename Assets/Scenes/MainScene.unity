@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0009996623, g: 0.0010221412, b: 0.0009996623, a: 1}
+  m_IndirectSpecularColor: {r: 0.0009963397, g: 0.0010251341, b: 0.0009963397, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -969,8 +969,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 6562f8fd8224d40f2936172daecbfaf7, type: 2}
-  dialogue: {fileID: 11400000, guid: a939cd1aa6c07462995c78af132bc5e2, type: 2}
+  dTrees:
+  - {fileID: 11400000, guid: a939cd1aa6c07462995c78af132bc5e2, type: 2}
   dialogueManager: {fileID: 1847941613}
+  inventoryManager: {fileID: 768936032}
 --- !u!114 &267521079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1353,8 +1355,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 9bd30bd19a87e413aa034ee3ba58da3a, type: 2}
-  dialogue: {fileID: 11400000, guid: 66fa0b5ce4e714f42a2f289225da864f, type: 2}
+  dTrees:
+  - {fileID: 11400000, guid: 66fa0b5ce4e714f42a2f289225da864f, type: 2}
   dialogueManager: {fileID: 1847941613}
+  inventoryManager: {fileID: 768936032}
 --- !u!114 &423809723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1771,8 +1775,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 04ae6688cda4d41fba0456aef047f755, type: 2}
-  dialogue: {fileID: 11400000, guid: c298030f67c904caf8edea3071dcaafe, type: 2}
+  dTrees:
+  - {fileID: 11400000, guid: c298030f67c904caf8edea3071dcaafe, type: 2}
   dialogueManager: {fileID: 1847941613}
+  inventoryManager: {fileID: 768936032}
 --- !u!114 &655590193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2033,8 +2039,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: ce094496f6fb74182a42b4d680994c84, type: 2}
-  dialogue: {fileID: 11400000, guid: c967758850aca4b178761eaa1687ae45, type: 2}
+  dTrees:
+  - {fileID: 11400000, guid: c967758850aca4b178761eaa1687ae45, type: 2}
   dialogueManager: {fileID: 1847941613}
+  inventoryManager: {fileID: 768936032}
 --- !u!1 &699743069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,7 +2589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e926b724a4e946a586be2026b4bab41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 6c445f272f17f48b3a380654a4353c24, type: 2}
+  dTrees:
+  - {fileID: 11400000, guid: 6c445f272f17f48b3a380654a4353c24, type: 2}
   dialogueManager: {fileID: 1847941613}
   invManager: {fileID: 768936032}
 --- !u!1 &955605414
@@ -2757,7 +2766,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e926b724a4e946a586be2026b4bab41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 731a7729c92204640a40eaf4c2284482, type: 2}
+  dTrees:
+  - {fileID: 11400000, guid: 731a7729c92204640a40eaf4c2284482, type: 2}
   dialogueManager: {fileID: 1847941613}
   invManager: {fileID: 768936032}
 --- !u!1001 &1094282703
@@ -3377,7 +3387,10 @@ MonoBehaviour:
   actionDescription: cut bushes
   instructionManager: {fileID: 1847941618}
   invManager: {fileID: 768936032}
-  dTree: {fileID: 11400000, guid: ec0b43e14f70c4905b60cb9781692d08, type: 2}
+  dTrees:
+  - {fileID: 11400000, guid: ec0b43e14f70c4905b60cb9781692d08, type: 2}
+  - {fileID: 11400000, guid: 1cac686bda999460882b944a62538b05, type: 2}
+  - {fileID: 11400000, guid: 7276ba84686154974b836b183155f0c8, type: 2}
   dialogueManager: {fileID: 1847941613}
 --- !u!320 &1340136819
 PlayableDirector:
@@ -3747,7 +3760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e926b724a4e946a586be2026b4bab41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: dfd4058e150934586a4f4223096edbc1, type: 2}
+  dTrees:
+  - {fileID: 11400000, guid: dfd4058e150934586a4f4223096edbc1, type: 2}
   dialogueManager: {fileID: 1847941613}
   invManager: {fileID: 768936032}
 --- !u!1001 &1538903605
@@ -3843,8 +3857,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: f8564dd6ae3a7415ebfee0a4dd7f8a48, type: 2}
-  dialogue: {fileID: 11400000, guid: 9275fde025c444598835f40fa5ec0f62, type: 2}
+  dTrees:
+  - {fileID: 11400000, guid: 9275fde025c444598835f40fa5ec0f62, type: 2}
   dialogueManager: {fileID: 1847941613}
+  inventoryManager: {fileID: 768936032}
 --- !u!114 &1538903608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4136,7 +4152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e926b724a4e946a586be2026b4bab41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 5d6b8685601f9478a983237a53be8170, type: 2}
+  dTrees:
+  - {fileID: 11400000, guid: d8b5e3a5670a4430282e6b0136a58f02, type: 2}
+  - {fileID: 11400000, guid: 5d6b8685601f9478a983237a53be8170, type: 2}
   dialogueManager: {fileID: 1847941613}
   invManager: {fileID: 768936032}
 --- !u!1 &1683096489
@@ -4468,7 +4486,8 @@ MonoBehaviour:
   dialogueUIText: {fileID: 1318503344}
   dialogueCanvas: {fileID: 1847941616}
   instructionManager: {fileID: 1847941618}
-  beginningDialogue: {fileID: 11400000, guid: b91b2c2dec39147a2a41835694cd2ab4, type: 2}
+  beginningDialogue:
+  - {fileID: 11400000, guid: b91b2c2dec39147a2a41835694cd2ab4, type: 2}
   shedReached: 0
   bushesReached: 0
 --- !u!114 &1847941614
@@ -4757,7 +4776,11 @@ MonoBehaviour:
   actionDescription: pick lock
   instructionManager: {fileID: 1847941618}
   invManager: {fileID: 768936032}
-  dTree: {fileID: 11400000, guid: 018e346d2ebf3442487a1ec6113ade75, type: 2}
+  dTrees:
+  - {fileID: 11400000, guid: 018e346d2ebf3442487a1ec6113ade75, type: 2}
+  - {fileID: 11400000, guid: fc8f1997d07a14f38bc431c2120fb043, type: 2}
+  - {fileID: 11400000, guid: 99c6d104325014b90804445aee00b0fa, type: 2}
+  - {fileID: 11400000, guid: fdcf9ec24147e489ebc5cb8bf5d23eee, type: 2}
   dialogueManager: {fileID: 1847941613}
 --- !u!320 &1965322542
 PlayableDirector:
@@ -4994,7 +5017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e926b724a4e946a586be2026b4bab41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 1437894231bb14ee986ee4ccf01ee049, type: 2}
+  dTrees:
+  - {fileID: 11400000, guid: 1437894231bb14ee986ee4ccf01ee049, type: 2}
   dialogueManager: {fileID: 1847941613}
   invManager: {fileID: 768936032}
 --- !u!1001 &2066215720
