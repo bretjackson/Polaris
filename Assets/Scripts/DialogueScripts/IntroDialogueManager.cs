@@ -1,14 +1,16 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class IntroDialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI child1DialogueUIText;
     public TextMeshProUGUI child2DialogueUIText;
     public Canvas dialogueCanvas;
+    public GameObject blackOutSquare;
 
     public GameObject optionPanel;
     public TextMeshProUGUI[] optionsUI;
@@ -20,12 +22,12 @@ public class IntroDialogueManager : MonoBehaviour
         StartIntroDialogue(dialogue);
         child1DialogueUIText.text = "";
         child2DialogueUIText.text = "";
+        //campfire noises ?
     }
 
     private void StartIntroDialogue(DialogueTree dialogueTree){
         dialogue = dialogueTree;
         currentSentence = dialogue.startingSentence;
-        print(currentSentence.text);
         dialogueCanvas.enabled = true;
         DisplayIntroSentence();
     }
@@ -43,8 +45,9 @@ public class IntroDialogueManager : MonoBehaviour
     }
 
     IEnumerator TypeIntroSentence(string sentence, int charId){
+        child1DialogueUIText.text = "";
+        child2DialogueUIText.text = "";
         TextMeshProUGUI dialogueUIText = GetCorrectUIText(charId);
-        dialogueUIText.text = "";
         foreach(char letter in sentence.ToCharArray()){
             dialogueUIText.text += letter;
             yield return new WaitForSeconds(0.05f);
@@ -79,7 +82,6 @@ public class IntroDialogueManager : MonoBehaviour
     }
 
     public void OptionOnClick(int index){
-        print("clicked!");
         Choice option = currentSentence.options[index];
         if (option.onOptionSelected != null){
             option.onOptionSelected.Raise();
@@ -90,5 +92,27 @@ public class IntroDialogueManager : MonoBehaviour
 
     void EndIntroDialogue(){
         dialogueCanvas.enabled = false;
+        StartCoroutine(LoadLevelAfterDelay(2));
     }
+
+     IEnumerator LoadLevelAfterDelay(float delay)
+     {
+        StartCoroutine(FadeToBlack());
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("MainScene");
+     }
+
+     IEnumerator FadeToBlack()
+     {  
+        Color objectColor = blackOutSquare.GetComponent<Image>().color;
+        float fadeAmount;
+        int fadeSpeed = 1;
+        while (objectColor.a < 255) {
+            fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
+
+            objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+            blackOutSquare.GetComponent<Image>().color = objectColor;
+            yield return null;
+        }
+     }
 }

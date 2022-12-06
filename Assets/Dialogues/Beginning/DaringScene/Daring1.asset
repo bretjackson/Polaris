@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
   m_Name: Daring1
   m_EditorClassIdentifier: 
-  text: I double dog dare you to go to the lake!
+  text: ' I double dog dare you to go to the lake!'
   nextSentence: {fileID: 0}
   charId: 1
   options:

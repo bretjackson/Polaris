@@ -18,5 +18,5 @@ MonoBehaviour:
   charId: 2
   options:
   - text: I'm not doing it.
-    nextSentence: {fileID: 0}
+    nextSentence: {fileID: 11400000, guid: 88f50c43c44af403193559c0ffd63538, type: 2}
     onOptionSelected: {fileID: 0}

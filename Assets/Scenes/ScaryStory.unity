@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 50
-  NewLevel: MainScene
+  NewLevel: Daring
 --- !u!4 &583059926
 Transform:
   m_ObjectHideFlags: 0
