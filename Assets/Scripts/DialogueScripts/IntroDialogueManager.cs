@@ -18,11 +18,15 @@ public class IntroDialogueManager : MonoBehaviour
     public DialogueTree dialogue;
     private Sentence currentSentence = null;
 
+    private new AudioSource audio;
+
     private void Start() {
         StartIntroDialogue(dialogue);
         child1DialogueUIText.text = "";
         child2DialogueUIText.text = "";
         //campfire noises ?
+        audio = GetComponent<AudioSource>();
+        audio.Play();
     }
 
     private void StartIntroDialogue(DialogueTree dialogueTree){
