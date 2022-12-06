@@ -21,11 +21,15 @@ public class PlayerController : MonoBehaviour
     public float characterHeight = 4.11f;
 
     public Animator animator;
+
+    private new AudioSource audio;
     
     void Start(){
         // animator = GetComponent<animator>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
+
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -79,9 +83,13 @@ public class PlayerController : MonoBehaviour
         //https://docs.unity3d.com/ScriptReference/CharacterController-velocity.html
         if (characterController.velocity.sqrMagnitude > 1E-3f){
             animator.SetBool("isWalking", true); //possible to refactor in so only have to get isWalking once
+            if(!audio.isPlaying){
+                audio.Play();
+            }
         }
         else{
             animator.SetBool("isWalking", false);
+            audio.Stop();
         }
     }
 }
