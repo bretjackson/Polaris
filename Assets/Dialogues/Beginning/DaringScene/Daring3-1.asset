@@ -15,7 +15,7 @@ MonoBehaviour:
   text: "We did it last year, it\u2019s a rite of passage for all fourth-year campers
     before they become junior counselors."
   nextSentence: {fileID: 0}
-  itemId: 
+  charId: 2
   options:
   - text: I'm not doing it.
     nextSentence: {fileID: 0}

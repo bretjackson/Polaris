@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: "We\u2019ll let you sit with us at lunch tomorrow."
   nextSentence: {fileID: 0}
-  itemId: 
+  charId: 2
   options:
   - text: I'm not doing it.
     nextSentence: {fileID: 0}

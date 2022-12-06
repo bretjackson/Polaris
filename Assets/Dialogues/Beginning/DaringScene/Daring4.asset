@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: "You\u2019re not scared of that stupid ghost story, are you?"
   nextSentence: {fileID: 0}
-  itemId: 
+  charId: 1
   options:
   - text: Of course not.
     nextSentence: {fileID: 11400000, guid: 1f11b8d4e6c7a445297c2b3cb6657642, type: 2}

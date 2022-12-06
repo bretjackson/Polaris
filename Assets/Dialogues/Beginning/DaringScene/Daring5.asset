@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Then prove it.
   nextSentence: {fileID: 0}
-  itemId: 
+  charId: 2
   options:
   - text: "Okay... But if I die, I\u2019ll haunt all of you."
     nextSentence: {fileID: 0}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Yes, you. Bring back a bottle of lake water to prove it.
   nextSentence: {fileID: 0}
-  itemId: 
+  charId: 1
   options:
   - text: "Why doesn\u2019t one of you go?"
     nextSentence: {fileID: 11400000, guid: 9964e79edcd084ab4ab0c5ae8401f44c, type: 2}

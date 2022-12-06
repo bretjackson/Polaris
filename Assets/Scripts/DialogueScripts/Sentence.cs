@@ -9,7 +9,8 @@ public class Sentence : ScriptableObject
     [TextArea(3, 10)]
     public string text = "text";
     public Sentence nextSentence;
-    public string itemId;
+    // public string itemId;
+    public int charId; // only used for intro scene
 
     public List<Choice> options = new List<Choice>();
 
@@ -22,22 +23,22 @@ public class Sentence : ScriptableObject
         }
     }
 
-    public List<int> getIds(){
-        List<int> ids = new List<int>();
-        if(itemId == "0") {
-            return ids;
-        }
-        if (itemId.Contains(",")) {
-            List<string> idsStr = itemId.Split(',').ToList();
-            foreach(string idStr in idsStr) {
-                ids.Add(int.Parse(idStr));
-            }
-        }
-        else{
-            ids.Add(int.Parse(itemId));
-        }
-        return ids;
-    }
+    // public List<int> getIds(){
+    //     List<int> ids = new List<int>();
+    //     if(itemId == "0") {
+    //         return ids;
+    //     }
+    //     if (itemId.Contains(",")) {
+    //         List<string> idsStr = itemId.Split(',').ToList();
+    //         foreach(string idStr in idsStr) {
+    //             ids.Add(int.Parse(idStr));
+    //         }
+    //     }
+    //     else{
+    //         ids.Add(int.Parse(itemId));
+    //     }
+    //     return ids;
+    // }
 }
 
 [System.Serializable]

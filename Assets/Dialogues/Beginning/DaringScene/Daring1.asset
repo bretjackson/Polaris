@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: I double dog dare you to go to the lake!
   nextSentence: {fileID: 0}
-  itemId: 
+  charId: 1
   options:
   - text: Who, me?
     nextSentence: {fileID: 11400000, guid: ec77b7e6d9e6b415583243c8fb26f9f8, type: 2}

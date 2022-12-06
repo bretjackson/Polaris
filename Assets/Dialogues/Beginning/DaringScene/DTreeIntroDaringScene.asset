@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef98fdfb613864f989fcc36315037561, type: 3}
   m_Name: DTreeIntroDaringScene
   m_EditorClassIdentifier: 
-  startingSentence: {fileID: 0}
+  startingSentence: {fileID: 11400000, guid: 3b37683a6a7b149278217054b1bcf80d, type: 2}
   requiredIds: 

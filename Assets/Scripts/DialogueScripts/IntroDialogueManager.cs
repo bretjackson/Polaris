@@ -6,89 +6,89 @@ using TMPro;
 
 public class IntroDialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI girlDialogueUIText;
     public TextMeshProUGUI child1DialogueUIText;
     public TextMeshProUGUI child2DialogueUIText;
     public Canvas dialogueCanvas;
 
-    public GameObject continueButton;
     public GameObject optionPanel;
     public TextMeshProUGUI[] optionsUI;
 
     public DialogueTree dialogue;
     private Sentence currentSentence = null;
 
-    // private void Start() {
-    //     StartIntroDialogue(dialogue);
-    // }
+    private void Start() {
+        StartIntroDialogue(dialogue);
+        child1DialogueUIText.text = "";
+        child2DialogueUIText.text = "";
+    }
 
-    // private void StartIntroDialogue(DialogueTree dialogueTree){
-    //     dialogue = dialogueTree;
-    //     currentSentence = dialogue.startingSentence;
-    //     dialogueCanvas.enabled = true;
-    //     DisplayIntroSentence();
-    // }
+    private void StartIntroDialogue(DialogueTree dialogueTree){
+        dialogue = dialogueTree;
+        currentSentence = dialogue.startingSentence;
+        print(currentSentence.text);
+        dialogueCanvas.enabled = true;
+        DisplayIntroSentence();
+    }
 
-    // public void AdvanceIntroSentence(){
-    //     currentSentence = currentSentence.nextSentence;
-    //     DisplayIntroSentence();
-    // }
+    public void DisplayIntroSentence(){
+        if (currentSentence == null){
+            EndIntroDialogue();
+            return;
+        }
+        HideOptions();
+        string sentence = currentSentence.text;
+        // child1DialogueUIText.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine(TypeIntroSentence(sentence, currentSentence.charId));
+    }
 
-    // public void DisplayIntroSentence(){
-    //     if (currentSentence == null){
-    //         EndIntroDialogue();
-    //         return;
-    //     }
-    //     HideOptions();
-    //     string sentence = currentSentence.text;
-    //     //dialogueUIText.text = sentence;
-    //     StopAllCoroutines();
-    //     StartCoroutine(TypeIntroSentence(sentence));
-    // }
+    IEnumerator TypeIntroSentence(string sentence, int charId){
+        TextMeshProUGUI dialogueUIText = GetCorrectUIText(charId);
+        dialogueUIText.text = "";
+        foreach(char letter in sentence.ToCharArray()){
+            dialogueUIText.text += letter;
+            yield return new WaitForSeconds(0.05f);
+        }
+        DisplayOptions();
+    }
 
-    // IEnumerator TypeIntroSentence(string sentence){
-    //     dialogueUIText.text = "";
-    //     foreach(char letter in sentence.ToCharArray()){
-    //         dialogueUIText.text += letter;
-    //         yield return new WaitForSeconds(0.05f);
-    //     }
+    TextMeshProUGUI GetCorrectUIText(int id) {
+        if (id ==1 ) {
+            return child1DialogueUIText;
+        }
+        else {
+            return child2DialogueUIText;
+        }
+    }
 
-    //     if (currentSentence.HasOptions()){
-    //         DisplayOptions();
-    //     }
-    //     else{
-    //         continueButton.SetActive(true);
-    //     }
-    // }
+    void DisplayOptions(){
+        if (currentSentence.options.Count <= optionsUI.Length){
+            for (int i=0; i < currentSentence.options.Count; i++){
+                optionsUI[i].text = currentSentence.options[i].text;
+                optionsUI[i].transform.parent.gameObject.SetActive(true);
+            }
+        }
+        optionPanel.SetActive(true);
+    }
 
-//     void DisplayOptions(){
-//         if (currentSentence.options.Count <= optionsUI.Length){
-//             for (int i=0; i < currentSentence.options.Count; i++){
-//                 optionsUI[i].text = currentSentence.options[i].text;
-//                 optionsUI[i].transform.parent.gameObject.SetActive(true);
-//             }
-//         }
-//         optionPanel.SetActive(true);
-//     }
+    void HideOptions(){
+        foreach(TextMeshProUGUI option in optionsUI){
+            option.transform.parent.gameObject.SetActive(false);
+        }
+        optionPanel.SetActive(false);
+    }
 
-//     void HideOptions(){
-//         continueButton.SetActive(false);
-//         foreach(TextMeshProUGUI option in optionsUI){
-//             option.transform.parent.gameObject.SetActive(false);
-//         }
-//         optionPanel.SetActive(false);
-//     }
+    public void OptionOnClick(int index){
+        print("clicked!");
+        Choice option = currentSentence.options[index];
+        if (option.onOptionSelected != null){
+            option.onOptionSelected.Raise();
+        }
+        currentSentence = option.nextSentence;
+        DisplayIntroSentence();
+    }
 
-//     public void OptionOnClick(int index){
-//         Choice option = currentSentence.options[index];
-//         if (option.onOptionSelected != null){
-//             option.onOptionSelected.Raise();
-//         }
-//         currentSentence = option.nextSentence;
-//         DisplaySentence();
-//     }
-
-//     void EndIntroDialogue(){
-//         dialogueCanvas.enabled = false;
-//     }
+    void EndIntroDialogue(){
+        dialogueCanvas.enabled = false;
+    }
 }
