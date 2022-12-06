@@ -9,11 +9,19 @@ public class ItemPickup : MonoBehaviour
     public DialogueTree dialogue;
     public DialogueManager dialogueManager;
 
+    private new AudioSource audio
+
+    void Start()
+    {
+       audio = GetComponent<AudioSource>();
+    }
+
     void Pickup()
     {
         InventoryManager.instance.Add(item);
         InventoryManager.instance.ListItems();
         Destroy(gameObject);
+        audio.Play();
 
         // trigger dialogue
         if (dialogueManager != null) {
