@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Beginning4
   m_EditorClassIdentifier: 
   text: "Sophia wouldn\u2019t have made anyone go into the woods alone when she was
-    a fourth-year camper."
+    a junior counselor."
   nextSentence: {fileID: 11400000, guid: 9d54a78aed6fd49e99e37b87b64120ba, type: 2}
   itemId: 6,7
   options: []
