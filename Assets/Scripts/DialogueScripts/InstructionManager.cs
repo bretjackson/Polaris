@@ -17,9 +17,8 @@ public class InstructionManager : MonoBehaviour
     {
         // ignore if space because we don't want canvas to be disabled
         if (currentInstructionKey == "space") {
-                return;
+            return;
         }
-        // if they've pressed the instructional key, instructions go away
         if (currentInstruction != null) {
             if (Input.GetKeyDown(currentInstructionKey)) {
                 EndInstructions();
