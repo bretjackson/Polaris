@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: We used one of these at camp to chop firewood. Maybe I could use this to
     get past those bushes.
-  nextSentence: {fileID: 11400000, guid: ab48a375511e24a27a04e005e672f486, type: 2}
-  itemId: -1,6,7
+  nextSentence: {fileID: 0}
+  charId: 0
   options: []
