@@ -31,7 +31,10 @@ public class ItemPickup : MonoBehaviour
         }
     }
 
-    public void CheckConditionals() {
+    public void CheckConditionals() 
+    {
+        /* Gets current inventory ids from inventory manager and puts those into dialogue manager. 
+        Then, triggers dialogue. */
         List<int> invIds = InventoryManager.instance.GetIds();
         dialogueManager.AddConditionals(invIds);
         dialogueManager.StartDialogue(dTrees);

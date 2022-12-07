@@ -8,14 +8,13 @@ public class UseItem : MonoBehaviour
 {
     public string itemName;
     public string itemId;
-    public string actionDescription;
+    public string actionDescription; // "Press E to use [itemName] to [actionDescription]."
     private PlayableDirector director;
-
-    public InstructionManager instructionManager;
-    public InventoryManager invManager;
 
     public List<DialogueTree> dTrees;
     public DialogueManager dialogueManager;
+    public InstructionManager instructionManager;
+    public InventoryManager invManager;
 
     private bool itemUsed = false;
     private bool instructionsPresent = false;
@@ -26,6 +25,7 @@ public class UseItem : MonoBehaviour
     {
         director = gameObject.GetComponent<PlayableDirector>();
         // set up required ids list needed to use this item
+        // TODO: change this to be a list input
         List<string> idsStr = itemId.Split(',').ToList();
         foreach(string idStr in idsStr) {
             ids.Add(int.Parse(idStr));
@@ -39,42 +39,46 @@ public class UseItem : MonoBehaviour
         {
             itemUsed = true;
             Use();
-            // dialogueManager.EndDialogue();
             instructionsPresent = false;
         }
     }
 
     void OnTriggerEnter()
     {
-        // check if inventory manager contains all ids listed to use the item
-        bool invManContainsAll = true;
-        foreach(int item in ids) {
-            if (!invManager.Contains(item)) {
-                invManContainsAll = false;
-            }
-        }
-
-        // trigger dialogue from dialogueManager depending on conditionals
+        // trigger dialogue depending on conditionals
         CheckConditionals();
 
         // if invManager contains necessary ids, allow ability to use item
-        if (!itemUsed & invManContainsAll)
+        if (!itemUsed & InvManagerContainsAll())
         {
             instructionManager.StartInstructions("Press E to use " + itemName.ToLower() + " to " + actionDescription.ToLower() + ".", "e");
             instructionsPresent = true;
         }
 
-        // update location-based conditionals
+        // update location-based conditionals if needed
         if (gameObject.tag == "Bushes") {
             dialogueManager.bushesReached = true;
         }
         if (gameObject.tag == "Shed") {
             dialogueManager.shedReached = true;
         }
-        
+    }
+
+    bool InvManagerContainsAll() 
+    {
+        bool invManContainsAll = true;
+        foreach(int item in ids) {
+            if (!invManager.Contains(item)) {
+                invManContainsAll = false;
+            }
+        }
+        return invManContainsAll;
     }
     
-    void CheckConditionals() {
+    void CheckConditionals() 
+    {
+        /* Gets current inventory ids from inventory manager and puts those into dialogue manager. 
+        Then, triggers dialogue. */
         List<int> invIds = invManager.GetIds();
         dialogueManager.AddConditionals(invIds);
         dialogueManager.StartDialogue(dTrees);
@@ -97,6 +101,8 @@ public class UseItem : MonoBehaviour
         director.Play();
 
         dialogueManager.EndDialogue();
+
+        // get rid of collider once item has been used
         Collider collider = gameObject.GetComponent<Collider>();
         collider.enabled = false;
     }

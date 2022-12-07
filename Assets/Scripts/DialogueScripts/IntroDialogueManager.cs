@@ -20,35 +20,37 @@ public class IntroDialogueManager : MonoBehaviour
 
     private new AudioSource audio;
 
-    private void Start() {
+    private void Start() 
+    {
         StartIntroDialogue(dialogue);
         child1DialogueUIText.text = "";
         child2DialogueUIText.text = "";
-        //campfire noises ?
         audio = GetComponent<AudioSource>();
         audio.Play();
     }
 
-    private void StartIntroDialogue(DialogueTree dialogueTree){
+    private void StartIntroDialogue(DialogueTree dialogueTree)
+    {
         dialogue = dialogueTree;
         currentSentence = dialogue.startingSentence;
         dialogueCanvas.enabled = true;
         DisplayIntroSentence();
     }
 
-    public void DisplayIntroSentence(){
+    public void DisplayIntroSentence()
+    {
         if (currentSentence == null){
             EndIntroDialogue();
             return;
         }
         HideOptions();
         string sentence = currentSentence.text;
-        // child1DialogueUIText.text = sentence;
         StopAllCoroutines();
         StartCoroutine(TypeIntroSentence(sentence, currentSentence.charId));
     }
 
-    IEnumerator TypeIntroSentence(string sentence, int charId){
+    IEnumerator TypeIntroSentence(string sentence, int charId)
+    {
         child1DialogueUIText.text = "";
         child2DialogueUIText.text = "";
         TextMeshProUGUI dialogueUIText = GetCorrectUIText(charId);
@@ -59,8 +61,10 @@ public class IntroDialogueManager : MonoBehaviour
         DisplayOptions();
     }
 
-    TextMeshProUGUI GetCorrectUIText(int id) {
-        if (id ==1 ) {
+    TextMeshProUGUI GetCorrectUIText(int id) 
+    { 
+        /* Returns the UI text for child 1 or 2 based on id. */
+        if (id == 1) {
             return child1DialogueUIText;
         }
         else {
@@ -68,7 +72,8 @@ public class IntroDialogueManager : MonoBehaviour
         }
     }
 
-    void DisplayOptions(){
+    void DisplayOptions()
+    {
         if (currentSentence.options.Count <= optionsUI.Length){
             for (int i=0; i < currentSentence.options.Count; i++){
                 optionsUI[i].text = currentSentence.options[i].text;
@@ -78,14 +83,16 @@ public class IntroDialogueManager : MonoBehaviour
         optionPanel.SetActive(true);
     }
 
-    void HideOptions(){
+    void HideOptions()
+    {
         foreach(TextMeshProUGUI option in optionsUI){
             option.transform.parent.gameObject.SetActive(false);
         }
         optionPanel.SetActive(false);
     }
 
-    public void OptionOnClick(int index){
+    public void OptionOnClick(int index)
+    {
         Choice option = currentSentence.options[index];
         if (option.onOptionSelected != null){
             option.onOptionSelected.Raise();
@@ -94,7 +101,8 @@ public class IntroDialogueManager : MonoBehaviour
         DisplayIntroSentence();
     }
 
-    void EndIntroDialogue(){
+    void EndIntroDialogue()
+    {
         dialogueCanvas.enabled = false;
         StartCoroutine(LoadLevelAfterDelay(2));
     }

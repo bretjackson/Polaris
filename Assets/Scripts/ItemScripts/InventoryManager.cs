@@ -14,12 +14,16 @@ public class InventoryManager : MonoBehaviour
     public GameObject Inventory;
     public GameObject InventoryButton;
 
+    /* item ids: 1 = ax, 2 = screwdriver, 3 = star badge, 4 = detective badge, 
+    5 = fauna badge, 6 = water, 7 = flashlight */
+
     private void Awake()
     {
         instance = this;
     }
 
-    void Update() {
+    void Update() 
+    {
         if (Input.GetKeyDown("tab")) {
             if (Inventory.activeInHierarchy == false) {
                 Inventory.SetActive(true);
@@ -53,7 +57,6 @@ public class InventoryManager : MonoBehaviour
         foreach(var item in items)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
-            //print(obj.transform.Find("ItemName"));
             var itemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
             
@@ -62,10 +65,8 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    // item ids:
-    // 1 = ax, 2 = screwdriver, 3 = star badge, 4 = detective badge, 
-    // 5 = fauna badge, 6 = water, 7 = flashlight
-    public bool Contains(int itemId){
+    public bool Contains(int itemId)
+    {
         foreach(Item i in items) {
             if (i.id == itemId) {
                 return true;
@@ -74,7 +75,8 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
-    public List<int> GetIds() {
+    public List<int> GetIds() 
+    {
         List<int> idList = new List<int>();
         foreach(Item i in items) {
             idList.Add(i.id);

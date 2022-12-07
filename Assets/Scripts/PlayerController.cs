@@ -64,7 +64,8 @@ public class PlayerController : MonoBehaviour
         UpdateAnimation();
     }
 
-    void Rotate(){
+    void Rotate()
+    {
         float horizontalRot = Input.GetAxis("Mouse X");
         float verticalRot = Input.GetAxis("Mouse Y");
 
@@ -79,8 +80,9 @@ public class PlayerController : MonoBehaviour
         cameraTransform.localRotation = Quaternion.Euler(currentRotation);
     }
 
-    void UpdateAnimation(){
-        //https://docs.unity3d.com/ScriptReference/CharacterController-velocity.html
+    void UpdateAnimation()
+    {
+        // https://docs.unity3d.com/ScriptReference/CharacterController-velocity.html
         if (characterController.velocity.sqrMagnitude > 1E-3f){
             animator.SetBool("isWalking", true); //possible to refactor in so only have to get isWalking once
             if(!audio.isPlaying){
