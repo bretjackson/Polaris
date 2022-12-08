@@ -42,13 +42,14 @@ public class CutSceneDialogueManager : MonoBehaviour
     {
         if (!intro)
         {
-            if (Input.GetKeyDown("space")) {
-            AdvanceIntroSentence();
-        }
+            if (Input.GetKeyDown("space")) 
+            {
+                AdvanceIntroSentence();
+            }
         }
     }
 
-    private void StartIntroDialogue(DialogueTree dialogueTree)
+    public void StartIntroDialogue(DialogueTree dialogueTree)
     {
         dialogue = dialogueTree;
         currentSentence = dialogue.startingSentence;
@@ -58,11 +59,15 @@ public class CutSceneDialogueManager : MonoBehaviour
 
     public void DisplayIntroSentence()
     {
-        if (currentSentence == null){
+        if (currentSentence == null)
+        {
             EndIntroDialogue();
             return;
         }
-        HideOptions();
+        if (intro) 
+        {
+            HideOptions();
+        }
         string sentence = currentSentence.text;
         StopAllCoroutines();
         StartCoroutine(TypeIntroSentence(sentence, currentSentence.charId));
@@ -137,22 +142,48 @@ public class CutSceneDialogueManager : MonoBehaviour
 
     void EndIntroDialogue()
     {
-        dialogueCanvas.enabled = false;
         if (intro) 
         {
-            StartCoroutine(LoadLevelAfterDelay(2));
+            StartCoroutine(LoadLevelAfterDelay(2, "MainScene"));
+        } 
+        else
+        {
+            GameObject instructionPanel = FindGameObjectInChildWithTag("Instructions");
+            instructionPanel.SetActive(true);
         }
     }
 
-     IEnumerator LoadLevelAfterDelay(float delay)
-     {
+    public GameObject FindGameObjectInChildWithTag (string tag)
+    {
+        Transform t = gameObject.transform;
+        for (int i = 0; i < t.childCount; i++) 
+        {
+            if(t.GetChild(i).gameObject.tag == tag)
+            {
+                return t.GetChild(i).gameObject;
+            }
+                 
+        }
+        return null;
+    }
+
+    public void TriggerNewLevel() // used for in ending scenes
+    {
+        print("PRESSED");
+        GameObject blackImage = FindGameObjectInChildWithTag("BlackOut");
+        blackImage.SetActive(true);
+        StartCoroutine(LoadLevelAfterDelay(2, "EndingScene2"));
+    }
+
+    IEnumerator LoadLevelAfterDelay(float delay, string sceneName)
+    {
         StartCoroutine(FadeToBlack());
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("MainScene");
-     }
+        SceneManager.LoadScene(sceneName);
+    }
 
-     IEnumerator FadeToBlack()
-     {  
+    IEnumerator FadeToBlack()
+    {  
         Color objectColor = blackOutSquare.GetComponent<Image>().color;
         float fadeAmount;
         int fadeSpeed = 1;
@@ -163,5 +194,5 @@ public class CutSceneDialogueManager : MonoBehaviour
             blackOutSquare.GetComponent<Image>().color = objectColor;
             yield return null;
         }
-     }
+    }
 }

@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef98fdfb613864f989fcc36315037561, type: 3}
-  m_Name: DTreeEnding
+  m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
+  m_Name: SeeingCamp1
   m_EditorClassIdentifier: 
-  startingSentence: {fileID: 11400000, guid: d475f3801ab784942975c95fe0bbb5db, type: 2}
-  requiredIds: 
+  text: " That\u2019s camp! I actually made it back!"
+  nextSentence: {fileID: 11400000, guid: b226d651a27a04e1ebff10907d44e0fe, type: 2}
+  charId: 0
+  options: []
