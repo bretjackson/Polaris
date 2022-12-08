@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: NotScaryPrints
+  m_Script: {fileID: 11500000, guid: ef98fdfb613864f989fcc36315037561, type: 3}
+  m_Name: DTreeNotScaryPrints2
   m_EditorClassIdentifier: 
-  text: The soil looks dry. These must be old tracks.
-  nextSentence: {fileID: 11400000, guid: 5231eaf9479764b04b8752f1c5ab5064, type: 2}
-  charId: 0
-  options: []
+  startingSentence: {fileID: 11400000, guid: 9c5a285ee56ad4d218bb19f1116baf20, type: 2}
+  requiredIds: 
