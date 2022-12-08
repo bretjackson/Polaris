@@ -1905,6 +1905,7 @@ MonoBehaviour:
   - {fileID: 982732160}
   - {fileID: 158032461}
   dialogue: {fileID: 11400000, guid: d53490f83690944aa94a71bf92ca7599, type: 2}
+  intro: 1
 --- !u!82 &1854395789
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1915,11 +1916,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1449136fb3eb5994897ffc4ab9f47de4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 48d8dfeb1b8ad4b4b9887c22097a0f90, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

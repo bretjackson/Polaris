@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class IntroDialogueManager : MonoBehaviour
+public class CutSceneDialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI child1DialogueUIText;
     public TextMeshProUGUI child2DialogueUIText;
@@ -20,13 +20,32 @@ public class IntroDialogueManager : MonoBehaviour
 
     private new AudioSource audio;
 
+    public bool intro; // slighlty different logic for ending scene needed
+    private TextMeshProUGUI dialogueUIText; // needed for ending scene only
+
     private void Start() 
     {
         StartIntroDialogue(dialogue);
         child1DialogueUIText.text = "";
         child2DialogueUIText.text = "";
         audio = GetComponent<AudioSource>();
-        audio.Play();
+        if (intro) 
+        {
+            audio.Play();
+        } else
+        {
+            dialogueUIText = child1DialogueUIText;
+        }
+    }
+
+    private void Update()
+    {
+        if (!intro)
+        {
+            if (Input.GetKeyDown("space")) {
+            AdvanceIntroSentence();
+        }
+        }
     }
 
     private void StartIntroDialogue(DialogueTree dialogueTree)
@@ -49,6 +68,18 @@ public class IntroDialogueManager : MonoBehaviour
         StartCoroutine(TypeIntroSentence(sentence, currentSentence.charId));
     }
 
+    public void AdvanceIntroSentence()
+    {
+        if(dialogueUIText != null && dialogueUIText.text == currentSentence.text) {
+            currentSentence = currentSentence.nextSentence;
+            DisplayIntroSentence();
+        }
+        else {
+            StopAllCoroutines();
+            dialogueUIText.text = currentSentence.text;
+        }
+    }
+
     IEnumerator TypeIntroSentence(string sentence, int charId)
     {
         child1DialogueUIText.text = "";
@@ -58,7 +89,10 @@ public class IntroDialogueManager : MonoBehaviour
             dialogueUIText.text += letter;
             yield return new WaitForSeconds(0.05f);
         }
-        DisplayOptions();
+        if (intro)
+        {
+            DisplayOptions();
+        }
     }
 
     TextMeshProUGUI GetCorrectUIText(int id) 
@@ -104,7 +138,10 @@ public class IntroDialogueManager : MonoBehaviour
     void EndIntroDialogue()
     {
         dialogueCanvas.enabled = false;
-        StartCoroutine(LoadLevelAfterDelay(2));
+        if (intro) 
+        {
+            StartCoroutine(LoadLevelAfterDelay(2));
+        }
     }
 
      IEnumerator LoadLevelAfterDelay(float delay)
