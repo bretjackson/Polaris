@@ -29,10 +29,7 @@ public class CutSceneDialogueManager : MonoBehaviour
         child1DialogueUIText.text = "";
         child2DialogueUIText.text = "";
         audio = GetComponent<AudioSource>();
-        if (intro) 
-        {
-            audio.Play();
-        } else
+        if (!intro)
         {
             dialogueUIText = child1DialogueUIText;
         }
@@ -169,7 +166,6 @@ public class CutSceneDialogueManager : MonoBehaviour
 
     public void TriggerNewLevel() // used for in ending scenes
     {
-        print("PRESSED");
         GameObject blackImage = FindGameObjectInChildWithTag("BlackOut");
         blackImage.SetActive(true);
         StartCoroutine(LoadLevelAfterDelay(2, "EndingScene2"));
