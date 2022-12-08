@@ -1893,7 +1893,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1854395783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6de9f82e3d3349bb926fabbea392630, type: 3}
+  m_Script: {fileID: 11500000, guid: 66e08974b7ed44184b5814963ce9cdad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   child1DialogueUIText: {fileID: 1457937682}
