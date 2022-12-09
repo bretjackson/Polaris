@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef98fdfb613864f989fcc36315037561, type: 3}
   m_Name: DTreeNotScaryPrints2
   m_EditorClassIdentifier: 
-  startingSentence: {fileID: 11400000, guid: 9c5a285ee56ad4d218bb19f1116baf20, type: 2}
+  startingSentence: {fileID: 11400000, guid: 35919001220a340bfb79b1745d9bf358, type: 2}
   requiredIds: 
