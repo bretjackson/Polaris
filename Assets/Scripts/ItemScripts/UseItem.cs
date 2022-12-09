@@ -16,6 +16,8 @@ public class UseItem : MonoBehaviour
     public InstructionManager instructionManager;
     public InventoryManager invManager;
 
+    private new AudioSource audio;
+
     private bool itemUsed = false;
     private bool instructionsPresent = false;
 
@@ -30,6 +32,8 @@ public class UseItem : MonoBehaviour
         foreach(string idStr in idsStr) {
             ids.Add(int.Parse(idStr));
         }
+
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -99,6 +103,7 @@ public class UseItem : MonoBehaviour
             animator.enabled = true;
         }
         director.Play();
+        audio.Play();
 
         dialogueManager.EndDialogue();
 
