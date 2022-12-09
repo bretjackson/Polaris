@@ -10,18 +10,12 @@ public class ItemPickup : MonoBehaviour
     public DialogueManager dialogueManager;
     public InventoryManager inventoryManager;
 
-    // private new AudioSource audio;
-
-    // void Start()
-    // {
-    //    audio = GetComponent<AudioSource>();
-    // }
+    public AudioSource audio;
 
     void Pickup()
-    {
+    {   
         inventoryManager.Add(item);
         inventoryManager.ListItems();
-        // audio.Play();
         Destroy(gameObject);
         
         // trigger dialogue
@@ -42,6 +36,7 @@ public class ItemPickup : MonoBehaviour
 
     private void OnMouseDown()
     {
+        audio.Play();
         Pickup();
     }
 }
