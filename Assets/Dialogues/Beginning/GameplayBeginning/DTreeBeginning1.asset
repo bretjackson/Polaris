@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: Beginning5
+  m_Script: {fileID: 11500000, guid: ef98fdfb613864f989fcc36315037561, type: 3}
+  m_Name: DTreeBeginning1
   m_EditorClassIdentifier: 
-  text: "She would know what to do. I wish she didn\u2019t go to college and could
-    still come to camp."
-  nextSentence: {fileID: 0}
-  charId: 0
-  options: []
+  characterName: 
+  startingSentence: {fileID: 11400000, guid: 7225b4948aeb245589919216c4ee9cfe, type: 2}

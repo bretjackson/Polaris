@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: "Sophia wouldn\u2019t have made anyone go into the woods alone when she was
     a junior counselor."
-  nextSentence: {fileID: 11400000, guid: 9d54a78aed6fd49e99e37b87b64120ba, type: 2}
-  itemId: 6,7
+  nextSentence: {fileID: 11400000, guid: ce63eb1f7fb094be281f78017ce38ac4, type: 2}
+  charId: 0
   options: []

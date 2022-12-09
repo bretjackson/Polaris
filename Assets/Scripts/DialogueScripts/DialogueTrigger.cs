@@ -6,7 +6,6 @@ public class DialogueTrigger : MonoBehaviour
 {
     public List<DialogueTree> dTrees;
     public DialogueManager dialogueManager;
-
     public InventoryManager invManager;
 
     public void CheckConditionals() 

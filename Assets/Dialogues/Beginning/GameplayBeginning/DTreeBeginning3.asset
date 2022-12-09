@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef98fdfb613864f989fcc36315037561, type: 3}
-  m_Name: BeginningDialogue
+  m_Name: DTreeBeginning3
   m_EditorClassIdentifier: 
-  characterName: 
-  startingSentence: {fileID: 11400000, guid: 7225b4948aeb245589919216c4ee9cfe, type: 2}
+  startingSentence: {fileID: 11400000, guid: 9d54a78aed6fd49e99e37b87b64120ba, type: 2}
+  requiredIds: 
