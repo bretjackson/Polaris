@@ -758,9 +758,8 @@ MonoBehaviour:
   blackOutSquare: {fileID: 3585996}
   optionPanel: {fileID: 0}
   optionsUI: []
-  dialogue: {fileID: 0}
+  dialogue: {fileID: 11400000, guid: fed907e5677e242009e2715d4214d13a, type: 2}
   intro: 0
-  cursorTexture: {fileID: 0}
 --- !u!114 &1000217879
 MonoBehaviour:
   m_ObjectHideFlags: 0
