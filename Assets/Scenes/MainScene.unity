@@ -3060,7 +3060,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9cfea70456b4b45b2432048f72a61e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dTrees: []
+  dTrees:
+  - {fileID: 11400000, guid: 7633966f58c6e4bd99b5f11a98af030e, type: 2}
   dialogueManager: {fileID: 1847941613}
 --- !u!82 &874413945
 AudioSource:
@@ -3166,7 +3167,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874413942}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -5890,7 +5891,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9cfea70456b4b45b2432048f72a61e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dTrees: []
+  dTrees:
+  - {fileID: 11400000, guid: 7633966f58c6e4bd99b5f11a98af030e, type: 2}
   dialogueManager: {fileID: 1847941613}
 --- !u!82 &1920756800
 AudioSource:
@@ -5996,7 +5998,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920756797}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2

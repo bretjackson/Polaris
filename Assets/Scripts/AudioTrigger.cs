@@ -23,7 +23,7 @@ public class AudioTrigger : MonoBehaviour
         audio.Play();
 
         //CancelInvoke("EventOnEnd"); //in case previously invoked
-        Invoke(nameof(PlayDialogue), 2); //execute on clip finished
+        Invoke(nameof(PlayDialogue), 3); //execute on clip finished
     }
 
     void PlayDialogue()
