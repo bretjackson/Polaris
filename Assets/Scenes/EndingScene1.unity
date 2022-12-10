@@ -1163,6 +1163,7 @@ MonoBehaviour:
   optionsUI: []
   dialogue: {fileID: 11400000, guid: e289831137d01469cb171bfda1505cd1, type: 2}
   intro: 0
+  cursorTexture: {fileID: 2800000, guid: 6630dbfefd1c68a42971b0d02b77150e, type: 3}
 --- !u!82 &1689936781
 AudioSource:
   m_ObjectHideFlags: 0

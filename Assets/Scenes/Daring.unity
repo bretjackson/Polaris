@@ -1906,6 +1906,7 @@ MonoBehaviour:
   - {fileID: 158032461}
   dialogue: {fileID: 11400000, guid: d53490f83690944aa94a71bf92ca7599, type: 2}
   intro: 1
+  cursorTexture: {fileID: 2800000, guid: 6630dbfefd1c68a42971b0d02b77150e, type: 3}
 --- !u!82 &1854395789
 AudioSource:
   m_ObjectHideFlags: 0

@@ -33,6 +33,8 @@ public class CutSceneDialogueManager : MonoBehaviour
         {
             dialogueUIText = child1DialogueUIText;
         }
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     private void Update()
