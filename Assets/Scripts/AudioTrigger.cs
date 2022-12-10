@@ -9,7 +9,7 @@ public class AudioTrigger : MonoBehaviour
 
     public List<DialogueTree> dTrees;
     public DialogueManager dialogueManager;
-
+    public InventoryManager invManager;
 
     // Start is called before the first frame update
     void Awake()
@@ -26,21 +26,24 @@ public class AudioTrigger : MonoBehaviour
         Invoke(nameof(PlayDialogue), 3); //execute on clip finished
     }
 
-    void PlayDialogue()
+    public void PlayDialogue() 
     {
         dialogueManager.StartDialogue(dTrees);
     }
 
     public void OnTriggerExit(Collider other)
     {   
-        GameObject parentObject = gameObject.transform.parent.gameObject;
-        GameObject child1 = parentObject.transform.GetChild(0).gameObject;
-        Collider collider1 = child1.GetComponent<Collider>();
-        collider1.enabled = false;
+        if (transform.parent != null) {
+            GameObject parentObject = gameObject.transform.parent.gameObject;
+            GameObject child1 = parentObject.transform.GetChild(0).gameObject;
+            Collider collider1 = child1.GetComponent<Collider>();
+            collider1.enabled = false;
 
-        GameObject child2 = parentObject.transform.GetChild(1).gameObject;
-        Collider collider2 = child2.GetComponent<Collider>();
-        collider2.enabled = false;
+            GameObject child2 = parentObject.transform.GetChild(1).gameObject;
+            Collider collider2 = child2.GetComponent<Collider>();
+            collider2.enabled = false;
+        }
+
     }   
     
 }
