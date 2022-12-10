@@ -10,7 +10,7 @@ public class ItemPickup : MonoBehaviour
     public DialogueManager dialogueManager;
     public InventoryManager inventoryManager;
 
-    public AudioSource audio;
+    public new AudioSource audio;
 
     void Pickup()
     {   
