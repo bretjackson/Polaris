@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0009996623, g: 0.0010221412, b: 0.0009996623, a: 1}
+  m_IndirectSpecularColor: {r: 0.0009963397, g: 0.0010251341, b: 0.0009963397, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5277,6 +5277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: f8564dd6ae3a7415ebfee0a4dd7f8a48, type: 2}
   dTrees:
+  - {fileID: 11400000, guid: f267b0436ec8f49c2b58f57502f18c07, type: 2}
   - {fileID: 11400000, guid: 9275fde025c444598835f40fa5ec0f62, type: 2}
   dialogueManager: {fileID: 1847941613}
   inventoryManager: {fileID: 768936032}
