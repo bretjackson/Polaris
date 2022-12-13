@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.07058824, g: 0.07872033, b: 0.10980392, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.015
@@ -1537,7 +1537,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423809716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 381.89, y: 2.686, z: 240.218}
+  m_LocalPosition: {x: 490.3, y: 10.57, z: 370.2}
   m_LocalScale: {x: 0.2, y: 0.01, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2069,15 +2069,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4524816608833232, guid: 9b25f1703b9da8d4eb28fd5fe8179830, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 248.91
+      value: 233.86
       objectReference: {fileID: 0}
     - target: {fileID: 4524816608833232, guid: 9b25f1703b9da8d4eb28fd5fe8179830, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.195
+      value: 11.732
       objectReference: {fileID: 0}
     - target: {fileID: 4524816608833232, guid: 9b25f1703b9da8d4eb28fd5fe8179830, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 527.99
+      value: 521.236
       objectReference: {fileID: 0}
     - target: {fileID: 4524816608833232, guid: 9b25f1703b9da8d4eb28fd5fe8179830, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2368,7 +2368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692780647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 248.21, y: 11.015, z: 540.952}
+  m_LocalPosition: {x: 270.015, y: 9.667, z: 539.811}
   m_LocalScale: {x: 0.2, y: 0.01, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2447,7 +2447,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699743069}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
@@ -3361,7 +3361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951381169}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 538.6, y: 28, z: -62.28}
+  m_LocalPosition: {x: 531.2, y: 28, z: -41.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
