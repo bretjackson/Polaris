@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: "She would know what to do. I wish she didn\u2019t go to college and could
     still come to camp."
-  nextSentence: {fileID: 0}
+  nextSentence: {fileID: 11400000, guid: 9d54a78aed6fd49e99e37b87b64120ba, type: 2}
   charId: 0
   options: []

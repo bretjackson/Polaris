@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SeeingStars1
   m_EditorClassIdentifier: 
   text: ' If I can find the North star, I can follow it back to camp.'
-  nextSentence: {fileID: 0}
+  nextSentence: {fileID: 11400000, guid: b226d651a27a04e1ebff10907d44e0fe, type: 2}
   charId: 0
   options: []
