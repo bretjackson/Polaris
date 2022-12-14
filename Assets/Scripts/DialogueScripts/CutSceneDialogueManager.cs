@@ -170,18 +170,19 @@ public class CutSceneDialogueManager : MonoBehaviour
     {
         GameObject blackImage = FindGameObjectInChildWithTag("BlackOut");
         blackImage.SetActive(true);
-        StartCoroutine(LoadLevelAfterDelay(2, "EndingScene2"));
+        StartCoroutine(LoadLevelAfterDelay(5, "EndingScene2"));
     }
 
     IEnumerator LoadLevelAfterDelay(float delay, string sceneName)
     {
-        StartCoroutine(FadeToBlack());
+        StartCoroutine(FadeToBlack(delay));
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(sceneName);
     }
 
-    IEnumerator FadeToBlack()
+    IEnumerator FadeToBlack(float delay)
     {  
+        yield return new WaitForSeconds(delay / 2);
         Color objectColor = blackOutSquare.GetComponent<Image>().color;
         float fadeAmount;
         int fadeSpeed = 1;

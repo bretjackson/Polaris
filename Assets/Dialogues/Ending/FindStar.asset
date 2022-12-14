@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
-  m_Name: SeeingStars1
+  m_Name: FindStar
   m_EditorClassIdentifier: 
-  text: ' If I can find the North star, I can follow it back to camp.'
+  text: I guess I can do more than I thought.
   nextSentence: {fileID: 0}
-  charId: 0
+  itemId: 6,7
   options: []
