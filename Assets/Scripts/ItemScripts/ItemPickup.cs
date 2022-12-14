@@ -9,6 +9,7 @@ public class ItemPickup : MonoBehaviour
     public List<DialogueTree> dTrees;
     public DialogueManager dialogueManager;
     public InventoryManager inventoryManager;
+    public Sentence firstBadgeDialogue;
 
     public new AudioSource audio;
 
@@ -32,6 +33,12 @@ public class ItemPickup : MonoBehaviour
         List<int> invIds = InventoryManager.instance.GetIds();
         dialogueManager.AddConditionals(invIds);
         dialogueManager.StartDialogue(dTrees);
+
+        if (!inventoryManager.firstBadgePickedUp & (item.id == 4 | item.id == 5))
+        {
+            dTrees[0].startingSentence.nextSentence = firstBadgeDialogue; // add on additional dialogue
+            inventoryManager.firstBadgePickedUp = true;
+        }
     }
 
     private void OnMouseDown()

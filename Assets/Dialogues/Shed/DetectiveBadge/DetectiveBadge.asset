@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
   m_Name: DetectiveBadge
   m_EditorClassIdentifier: 
-  text: My detective badge! We learned how to solve cases and pick locks.
-  nextSentence: {fileID: 11400000, guid: bd4b52b41c3ce46bbbce413e4341a827, type: 2}
-  itemId: 6,7
+  text: My detective badge! At camp, we learned how to solve cases and pick locks.
+  nextSentence: {fileID: 11400000, guid: 3a5c7bed1e3314eb597613018202f04f, type: 2}
+  charId: 0
   options: []

@@ -1061,6 +1061,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a939cd1aa6c07462995c78af132bc5e2, type: 2}
   dialogueManager: {fileID: 1847941613}
   inventoryManager: {fileID: 768936032}
+  firstBadgeDialogue: {fileID: 0}
   audio: {fileID: 1951464921}
 --- !u!114 &267521079
 MonoBehaviour:
@@ -1578,6 +1579,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 66fa0b5ce4e714f42a2f289225da864f, type: 2}
   dialogueManager: {fileID: 1847941613}
   inventoryManager: {fileID: 768936032}
+  firstBadgeDialogue: {fileID: 11400000, guid: 3a5c7bed1e3314eb597613018202f04f, type: 2}
   audio: {fileID: 1951464921}
 --- !u!114 &423809723
 MonoBehaviour:
@@ -2151,6 +2153,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c298030f67c904caf8edea3071dcaafe, type: 2}
   dialogueManager: {fileID: 1847941613}
   inventoryManager: {fileID: 768936032}
+  firstBadgeDialogue: {fileID: 0}
   audio: {fileID: 1951464921}
 --- !u!114 &655590193
 MonoBehaviour:
@@ -2422,6 +2425,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c967758850aca4b178761eaa1687ae45, type: 2}
   dialogueManager: {fileID: 1847941613}
   inventoryManager: {fileID: 768936032}
+  firstBadgeDialogue: {fileID: 11400000, guid: 3a5c7bed1e3314eb597613018202f04f, type: 2}
   audio: {fileID: 1951464921}
 --- !u!1 &699743069
 GameObject:
@@ -2810,6 +2814,7 @@ MonoBehaviour:
   InventoryItem: {fileID: 3893060395419658933, guid: 7830f92c739f24b8ba002cd73a375ad3, type: 3}
   Inventory: {fileID: 3521487}
   InventoryButton: {fileID: 265696599}
+  firstBadgePickedUp: 0
 --- !u!4 &768936033
 Transform:
   m_ObjectHideFlags: 0
@@ -5281,6 +5286,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9275fde025c444598835f40fa5ec0f62, type: 2}
   dialogueManager: {fileID: 1847941613}
   inventoryManager: {fileID: 768936032}
+  firstBadgeDialogue: {fileID: 0}
   audio: {fileID: 1951464921}
 --- !u!114 &1538903608
 MonoBehaviour:

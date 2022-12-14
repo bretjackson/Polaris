@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48599b88b109f4377adc9378e738ecf6, type: 3}
   m_Name: TrackingBadge1
   m_EditorClassIdentifier: 
-  text: "My tracking merit badge! It must\u2019ve fallen off my vest\u2026"
-  nextSentence: {fileID: 11400000, guid: 3a5c7bed1e3314eb597613018202f04f, type: 2}
-  itemId: 6,7
+  text: 'My tracking merit badge! '
+  nextSentence: {fileID: 0}
+  charId: 0
   options: []

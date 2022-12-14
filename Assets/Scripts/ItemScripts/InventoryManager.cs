@@ -14,12 +14,15 @@ public class InventoryManager : MonoBehaviour
     public GameObject Inventory;
     public GameObject InventoryButton;
 
+    public bool firstBadgePickedUp;
+
     /* item ids: 1 = ax, 2 = screwdriver, 3 = star badge, 4 = detective badge, 
     5 = fauna badge, 6 = water, 7 = flashlight */
 
     private void Awake()
     {
         instance = this;
+        firstBadgePickedUp = false;
     }
 
     void Update() 
