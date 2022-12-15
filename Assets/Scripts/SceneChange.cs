@@ -39,6 +39,8 @@ public class SceneChange : MonoBehaviour
         }
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(NewLevel);
+        float currentVolume = AudioListener.volume;
+        AudioListener.volume = 1.0f;
     }
 
     IEnumerator FadeToBlack(float delay)
